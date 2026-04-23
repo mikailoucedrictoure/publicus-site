@@ -34,7 +34,33 @@
 </head>
 <body>
 
- 
+  <!-- ══════════════════════════════════════
+       HEADER / NAV
+  ══════════════════════════════════════ -->
+  <header class="header" id="header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#hero" class="nav__logo" aria-label="Publicus Group — Accueil">
+        <span class="nav__logo-text">PUBLICUS</span>
+        <span class="nav__logo-dot"></span>
+        <span class="nav__logo-sub">GROUP</span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#services" class="nav__link" aria-label="Voir nos services">Services</a></li>
+        <li><a href="#packs" class="nav__link" aria-label="Voir nos forfaits">Forfaits</a></li>
+        <li><a href="#process" class="nav__link" aria-label="Notre processus">Processus</a></li>
+        <li><a href="#contact" class="nav__link" aria-label="Nous contacter">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn--outline nav__cta" aria-label="Démarrer votre projet">
+        Démarrer →
+      </a>
+
+      <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
     <!-- Mobile menu -->
     <div class="nav__mobile" id="navLinks" aria-hidden="true">
       <a href="#services" class="nav__mobile-link">Services</a>
