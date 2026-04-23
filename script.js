@@ -1,3 +1,16 @@
+
+/* ──────────────────────────────────────────────────
+   0. FIX HERO — Force la visibilité si animation bloquée
+────────────────────────────────────────────────── */
+(function fixHeroVisibility() {
+  setTimeout(() => {
+    document.querySelectorAll('.animate-fade-up').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }, 100);
+})();
+
 /* ═══════════════════════════════════════════════════
    PUBLICUS GROUP — script.js
    Vanilla JS · Zéro dépendance
