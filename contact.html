@@ -4,278 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── SEO unique à cette page ── -->
-  <title>Contact | Publicus Group — Parlons de votre projet</title>
+  <title>Contact | Publicus Group — Parlons de Votre Projet</title>
   <meta name="description"
-        content="Contactez Publicus Group à Moncton, NB. Formulaire de contact, téléphone, réseaux sociaux. Un appel de 30 minutes suffit pour démarrer votre transformation digitale." />
-  <meta name="robots" content="index, follow" />
+        content="Contactez Publicus Group à Moncton, NB. Un appel de 30 minutes suffit pour identifier la meilleure stratégie digitale pour votre entreprise. Réponse garantie sous 24h." />
+  <meta name="keywords"
+        content="contact Publicus Group, agence digitale Moncton, devis site web, appel gratuit, email" />
+  <meta name="author"  content="Publicus Group" />
+  <meta name="robots"  content="index, follow" />
 
-  <link rel="icon" type="image/png" href="logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Contact | Publicus Group — Démarrons Ensemble" />
+  <meta property="og:description" content="Un appel de 30 minutes suffit pour lancer votre transformation digitale. Contactez Publicus Group à Moncton — réponse sous 24h garantie." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://publicusgroup.mychariow.shop/contact.html" />
+  <meta property="og:image"       content="assets/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ── Styles propres à contact.html ── -->
   <style>
-
-    /* ── Hero de la page contact ── */
-    .hero-page {
-      padding:    calc(var(--hauteur-nav) + 64px) 0 56px;
+    /* ── Hero page intérieure ── */
+    .hero-interieur-page {
+      padding: calc(var(--hauteur-nav) + 80px) 0 80px;
       text-align: center;
-      position:   relative;
-      overflow:   hidden;
+    }
+    .hero-interieur-page h1 { margin: 16px 0 20px; }
+    .hero-interieur-page .sous-titre {
+      font-size:   1.08rem;
+      font-weight: 300;
+      color:       var(--texte-attenue);
+      max-width:   560px;
+      margin:      0 auto;
+      line-height: 1.85;
     }
 
-    .hero-page::before {
-      content:  '';
-      position: absolute;
-      inset:    0;
-      background: radial-gradient(
-        ellipse 60% 55% at 50% 30%,
-        rgba(245, 197, 24, 0.10) 0%,
-        transparent 65%
-      );
-      pointer-events: none;
-    }
-
-    /* ── Grille principale contact ── */
+    /* ── Grille contact (formulaire + infos) ── */
     .contact-grille {
       display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap:     var(--espace-xl);
+      grid-template-columns: 1.4fr 1fr;
+      gap: var(--espace-xl);
       align-items: start;
     }
 
-    /* ── Colonne gauche : Infos de contact ── */
-    .contact-infos { }
+    /* ── Carte formulaire ── */
+    .carte-formulaire {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-bordure);
+      border-radius: var(--rayon-xl);
+      padding: var(--espace-xl);
+    }
 
-    .contact-infos h2 {
-      font-size:  clamp(1.6rem, 3.5vw, 2.5rem);
+    .carte-formulaire h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: var(--espace-sm);
     }
 
-    /* ── Carte d'information (téléphone, email, etc.) ── */
-    .info-card {
-      display:       flex;
-      align-items:   flex-start;
-      gap:           16px;
-      padding:       var(--espace-md);
-      background:    var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      border:        1px solid var(--glass-bordure);
-      border-radius: var(--rayon);
-      margin-bottom: var(--espace-sm);
-      transition:    var(--transition-mid);
-      text-decoration: none;
-    }
-
-    .info-card:hover {
-      border-color: rgba(245, 197, 24, 0.4);
-      transform:    translateX(6px);
-    }
-
-    .info-card-icone {
-      width:           44px;
-      height:          44px;
-      border-radius:   10px;
-      background:      var(--or-subtil);
-      border:          1px solid var(--or-bordure);
-      display:         flex;
-      align-items:     center;
-      justify-content: center;
-      flex-shrink:     0;
-      transition:      var(--transition-rapide);
-    }
-
-    .info-card:hover .info-card-icone {
-      background:   var(--or);
-      border-color: var(--or);
-    }
-
-    .info-card:hover .info-card-icone svg {
-      color: var(--sombre);
-    }
-
-    .info-card-icone svg {
-      width:  20px;
-      height: 20px;
-      color:  var(--or);
-      transition: color var(--transition-rapide);
-    }
-
-    .info-card-corps {}
-
-    .info-card-label {
-      font-family:    var(--police-sub);
-      font-size:      0.72rem;
-      font-weight:    700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color:          var(--or);
-      display:        block;
-      margin-bottom:  4px;
-    }
-
-    .info-card-valeur {
-      font-size:  0.95rem;
-      color:      var(--blanc);
-      font-weight: 400;
-    }
-
-    /* ── Réseaux sociaux dans la page contact ── */
-    .contact-reseaux {
-      margin-top: var(--espace-lg);
-    }
-
-    .contact-reseaux-titre {
-      font-family:    var(--police-sub);
-      font-size:      0.74rem;
-      font-weight:    700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color:          var(--or);
-      margin-bottom:  var(--espace-sm);
-    }
-
-    .reseaux-liste {
-      display:   flex;
-      gap:       10px;
-      flex-wrap: wrap;
-    }
-
-    /* Bouton réseau élargi avec texte */
-    .btn-reseau-large {
-      display:     flex;
-      align-items: center;
-      gap:         10px;
-      padding:     10px 16px;
-      background:  var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      border:      1px solid var(--glass-bordure);
-      border-radius: var(--rayon);
-      color:       var(--texte-attenue);
-      font-family: var(--police-sub);
-      font-size:   0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      transition:  var(--transition-rapide);
-    }
-
-    .btn-reseau-large:hover {
-      background:   var(--or);
-      border-color: var(--or);
-      color:        var(--sombre);
-      transform:    translateY(-2px);
-    }
-
-    .btn-reseau-large svg {
-      width:  18px;
-      height: 18px;
-    }
-
-    /* ── Disponibilité / Horaires ── */
-    .dispo-card {
-      margin-top:  var(--espace-md);
-      padding:     var(--espace-md);
-      background:  linear-gradient(135deg, rgba(245,197,24,0.08) 0%, transparent 100%);
-      border:      1px solid var(--or-bordure);
-      border-radius: var(--rayon);
-    }
-
-    .dispo-titre {
-      font-family:    var(--police-sub);
-      font-size:      0.74rem;
-      font-weight:    700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color:          var(--or);
-      margin-bottom:  10px;
-    }
-
-    .dispo-ligne {
-      display:         flex;
-      justify-content: space-between;
-      align-items:     center;
-      padding:         6px 0;
-      border-bottom:   1px solid rgba(255,255,255,0.05);
-      font-size:       0.85rem;
-    }
-
-    .dispo-ligne:last-child { border-bottom: none; }
-
-    .dispo-jour  { color: var(--texte-attenue); }
-    .dispo-heure { color: var(--blanc); font-weight: 600; }
-
-    .dispo-statut {
-      display:     inline-flex;
-      align-items: center;
-      gap:         6px;
-      font-size:   0.7rem;
-      color:       #2EC4B6;
-      font-family: var(--police-sub);
-      font-weight: 700;
-    }
-
-    .dispo-statut::before {
-      content:       '';
-      width:         6px;
-      height:        6px;
-      border-radius: 50%;
-      background:    #2EC4B6;
-      animation:     pointPulse 2s infinite;
-    }
-
-    /* ── Formulaire de contact ── */
-    .formulaire-wrap {
-      /* Hérite de .carte-glass */
-    }
-
-    .formulaire-titre {
-      font-family:    var(--police-titre);
-      font-size:      clamp(1.6rem, 3vw, 2.2rem);
-      color:          var(--blanc);
-      margin-bottom:  var(--espace-xs);
-    }
-
-    .formulaire-sous-titre {
-      font-size:  0.9rem;
-      color:      var(--texte-attenue);
+    .carte-formulaire > p {
+      font-size: 0.92rem;
       margin-bottom: var(--espace-lg);
     }
 
-    /* Grille 2 colonnes dans le formulaire */
-    .form-grille-2 {
+    /* ── Colonne infos ── */
+    .contact-infos {
+      display: flex;
+      flex-direction: column;
+      gap: var(--espace-md);
+    }
+
+    .info-bloc {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-bordure);
+      border-radius: var(--rayon-lg);
+      padding: var(--espace-md) var(--espace-lg);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--espace-md);
+      transition: border-color var(--transition-rapide);
+    }
+
+    .info-bloc:hover { border-color: var(--or); }
+
+    .info-icone {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(245, 197, 24, 0.12);
+      border: 1px solid var(--or-bordure);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-icone svg {
+      width: 20px;
+      height: 20px;
+      color: var(--or);
+    }
+
+    .info-texte-label {
+      font-family: var(--police-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 6px;
+    }
+
+    .info-texte-valeur {
+      font-size: 0.92rem;
+      color: var(--blanc);
+      font-weight: 400;
+    }
+
+    .info-texte-valeur a {
+      color: var(--blanc);
+      transition: color var(--transition-rapide);
+    }
+
+    .info-texte-valeur a:hover { color: var(--or); }
+
+    /* ── Heures d'ouverture ── */
+    .horaires-table {
+      width: 100%;
+    }
+
+    .horaires-table tr {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .horaires-table tr:last-child { border-bottom: none; }
+
+    .horaires-table td {
+      font-size: 0.85rem;
+      color: var(--texte-attenue);
+    }
+
+    .horaires-table td:last-child { color: var(--or); }
+
+    /* ── Badge de garantie ── */
+    .garantie-bloc {
+      background: rgba(245, 197, 24, 0.08);
+      border: 1px solid var(--or-bordure);
+      border-radius: var(--rayon);
+      padding: var(--espace-md);
+      display: flex;
+      align-items: center;
+      gap: var(--espace-sm);
+    }
+
+    .garantie-emoji { font-size: 1.6rem; flex-shrink: 0; }
+
+    .garantie-texte strong {
+      display: block;
+      font-family: var(--police-sub);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 4px;
+    }
+
+    .garantie-texte p { font-size: 0.82rem; }
+
+    /* ── Grille champs de formulaire ── */
+    .champs-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:     var(--espace-sm);
+      gap: var(--espace-md);
     }
 
-    /* Spinner de chargement (pendant l'envoi) */
-    @keyframes rotation {
-      to { transform: rotate(360deg); }
+    /* ── Bouton submit plein width ── */
+    .btn-submit {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
     }
 
-    .spinner {
-      display:       inline-block;
-      width:         16px;
-      height:        16px;
-      border:        2px solid rgba(255,255,255,0.3);
-      border-top:    2px solid var(--blanc);
-      border-radius: 50%;
-      animation:     rotation 0.8s linear infinite;
-      vertical-align: middle;
-    }
-
-    /* ── Responsive ── */
     @media (max-width: 960px) {
       .contact-grille { grid-template-columns: 1fr; }
+      .champs-2col    { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 600px) {
-      .form-grille-2 { grid-template-columns: 1fr; }
-    }
-
   </style>
 </head>
 
@@ -284,8 +203,8 @@
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-interieur">
-      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Accueil">
-        <img src="logo.png" alt="Logo Publicus Group" width="44" height="44" />
+      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Retour à l'accueil">
+        <img src="assets/logo.png" alt="Publicus Group Logo" width="44" height="44" />
         <span class="nav-logo-texte">PUBLICUS <span>GROUP</span></span>
       </a>
       <ul class="nav-liens" role="list">
@@ -295,454 +214,377 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn-nav">Un appel suffit →</a>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <button class="burger"
+              aria-label="Ouvrir le menu de navigation"
+              aria-expanded="false"
+              aria-controls="menu-mobile">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu mobile">
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu de navigation mobile">
     <a href="index.html">Accueil</a>
     <a href="services.html">Services</a>
     <a href="a-propos.html">À Propos</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn-nav" style="margin-top:8px;">Un appel suffit →</a>
+    <div class="menu-mobile-contact"><p>+1 (581) 688-3346</p></div>
   </div>
 
 
   <!-- HERO PAGE -->
-  <header class="hero-page" role="banner">
-    <div class="container" style="position:relative; z-index:1;">
-      <span class="badge revele" style="margin-bottom:20px; display:inline-flex;">
-        Réponse sous 24h
-      </span>
-      <!-- H1 de la page Contact -->
-      <h1 class="revele delai-1" style="font-size: clamp(2.8rem,7vw,5rem);">
-        Parlons de<br /><em>votre projet</em>
+  <section class="hero-interieur-page" aria-label="Titre de la page Contact">
+    <div class="container">
+      <div class="revele">
+        <span class="badge">Réponse sous 24h garantie</span>
+      </div>
+      <h1 class="revele delai-1">
+        Parlons de votre <em>Projet</em>
       </h1>
-      <p class="revele delai-2" style="max-width:440px; margin: 16px auto 0; font-size:1.05rem;">
-        Un appel de 30 minutes suffit pour identifier la meilleure
-        stratégie digitale pour votre business.
+      <p class="sous-titre revele delai-2">
+        Un appel de 30 minutes suffit pour identifier la meilleure stratégie
+        digitale pour votre entreprise. Aucun engagement, tout le potentiel.
       </p>
     </div>
-  </header>
+  </section>
 
 
-  <main>
-    <section aria-label="Formulaire et informations de contact">
-      <div class="container">
-        <div class="contact-grille">
+  <!-- SECTION CONTACT PRINCIPALE -->
+  <section aria-label="Formulaire de contact et coordonnées">
+    <div class="container">
+      <div class="contact-grille">
 
-          <!-- ══ COLONNE GAUCHE : INFOS ══ -->
-          <div>
+        <!-- FORMULAIRE -->
+        <div class="carte-formulaire revele-gauche">
+          <h2>Envoyez-nous un message</h2>
+          <p>Remplissez ce formulaire et nous vous répondons dans les 24 heures.</p>
 
-            <div class="revele-gauche">
-              <h2>Restons en contact</h2>
-              <p style="margin: 12px 0 var(--espace-lg); font-size:0.9rem;">
-                Choisissez le canal qui vous convient.
-                Nous répondons toujours sous 24 heures ouvrables.
+          <!-- Le formulaire -->
+          <form id="formulaire-contact" novalidate>
+
+            <!-- Nom + Prénom -->
+            <div class="champs-2col">
+              <div class="champ-groupe">
+                <label class="champ-label" for="prenom">Prénom</label>
+                <input
+                  type="text"
+                  id="prenom"
+                  name="prenom"
+                  class="champ-input"
+                  placeholder="Jean"
+                  required
+                  autocomplete="given-name" />
+                <span class="msg-erreur" id="erreur-prenom">Ce champ est requis.</span>
+              </div>
+              <div class="champ-groupe">
+                <label class="champ-label" for="nom">Nom</label>
+                <input
+                  type="text"
+                  id="nom"
+                  name="nom"
+                  class="champ-input"
+                  placeholder="Dupont"
+                  required
+                  autocomplete="family-name" />
+                <span class="msg-erreur" id="erreur-nom">Ce champ est requis.</span>
+              </div>
+            </div>
+
+            <!-- Email + Téléphone -->
+            <div class="champs-2col">
+              <div class="champ-groupe">
+                <label class="champ-label" for="email">Adresse email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="champ-input"
+                  placeholder="jean@exemple.com"
+                  required
+                  autocomplete="email" />
+                <span class="msg-erreur" id="erreur-email">Adresse email invalide.</span>
+              </div>
+              <div class="champ-groupe">
+                <label class="champ-label" for="telephone">Téléphone (optionnel)</label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  class="champ-input"
+                  placeholder="+1 (506) 000-0000"
+                  autocomplete="tel" />
+              </div>
+            </div>
+
+            <!-- Entreprise -->
+            <div class="champ-groupe">
+              <label class="champ-label" for="entreprise">Nom de l'entreprise (optionnel)</label>
+              <input
+                type="text"
+                id="entreprise"
+                name="entreprise"
+                class="champ-input"
+                placeholder="Mon Entreprise Inc."
+                autocomplete="organization" />
+            </div>
+
+            <!-- Service souhaité -->
+            <div class="champ-groupe">
+              <label class="champ-label" for="service">Service souhaité</label>
+              <select id="service" name="service" class="champ-select" required>
+                <option value="" disabled selected>Choisissez un service…</option>
+                <optgroup label="Présence Digitale">
+                  <option value="site-vitrine">Site Vitrine</option>
+                  <option value="ecommerce">E-Commerce</option>
+                  <option value="identite">Identité Visuelle</option>
+                </optgroup>
+                <optgroup label="Marketing & Croissance">
+                  <option value="seo">SEO Local</option>
+                  <option value="reseaux">Gestion Réseaux Sociaux</option>
+                  <option value="pub">Publicité Payante</option>
+                  <option value="video">Montage Vidéo</option>
+                  <option value="email">Email Marketing</option>
+                  <option value="etude">Étude de Marché</option>
+                </optgroup>
+                <optgroup label="Tech & Logiciels">
+                  <option value="stocks">Logiciel Gestion Stocks</option>
+                  <option value="rh">RH & Planification</option>
+                  <option value="app">App Web Sur Mesure</option>
+                </optgroup>
+                <optgroup label="Agents IA">
+                  <option value="receptionniste">Agent Réceptionniste</option>
+                  <option value="commandes">Agent Prise de Commandes</option>
+                  <option value="support">Agent Support Client</option>
+                  <option value="recrutement">Agent Recrutement</option>
+                </optgroup>
+                <optgroup label="Forfaits">
+                  <option value="pack-lancement">Pack Lancement ($2 500)</option>
+                  <option value="pack-croissance">Pack Croissance 360° ($6 500)</option>
+                </optgroup>
+                <option value="autre">Autre / Je ne sais pas encore</option>
+              </select>
+              <span class="msg-erreur" id="erreur-service">Veuillez choisir un service.</span>
+            </div>
+
+            <!-- Budget -->
+            <div class="champ-groupe">
+              <label class="champ-label" for="budget">Budget envisagé</label>
+              <select id="budget" name="budget" class="champ-select">
+                <option value="" disabled selected>Sélectionnez une fourchette…</option>
+                <option value="moins-1000">Moins de $1 000</option>
+                <option value="1000-3000">$1 000 – $3 000</option>
+                <option value="3000-6000">$3 000 – $6 000</option>
+                <option value="6000-10000">$6 000 – $10 000</option>
+                <option value="plus-10000">Plus de $10 000</option>
+                <option value="je-ne-sais-pas">Je ne sais pas encore</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="champ-groupe">
+              <label class="champ-label" for="message">Décrivez votre projet</label>
+              <textarea
+                id="message"
+                name="message"
+                class="champ-textarea"
+                placeholder="Parlez-nous de votre entreprise, de vos objectifs et de ce que vous cherchez à accomplir…"
+                required></textarea>
+              <span class="msg-erreur" id="erreur-message">Veuillez décrire votre projet.</span>
+            </div>
+
+            <!-- Bouton submit -->
+            <button type="submit" class="btn btn-primaire btn-submit">
+              Envoyer ma demande <span class="fleche">→</span>
+            </button>
+
+          </form>
+
+          <!-- Message de succès (caché par défaut) -->
+          <div class="form-succes" id="form-succes" aria-live="polite">
+            <div class="succes-icone">✓</div>
+            <h3 style="color: var(--or);">Message envoyé !</h3>
+            <p>Merci pour votre message. Nous vous répondons dans les 24 heures.</p>
+            <a href="index.html" class="btn btn-contour" style="margin-top: 8px;">
+              Retour à l'accueil
+            </a>
+          </div>
+
+        </div>
+
+
+        <!-- INFORMATIONS DE CONTACT -->
+        <div class="contact-infos revele-droite">
+
+          <!-- Garantie -->
+          <div class="garantie-bloc">
+            <span class="garantie-emoji">⚡</span>
+            <div class="garantie-texte">
+              <strong>Réponse garantie sous 24h</strong>
+              <p>Nous nous engageons à répondre à toutes les demandes dans la journée.</p>
+            </div>
+          </div>
+
+          <!-- Téléphone -->
+          <div class="info-bloc">
+            <div class="info-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="info-texte-label">Téléphone</p>
+              <p class="info-texte-valeur">
+                <a href="tel:+15816883346">+1 (581) 688-3346</a>
               </p>
             </div>
+          </div>
 
-            <!-- Téléphone -->
-            <a href="tel:+15816883346" class="info-card revele delai-1">
-              <div class="info-card-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-              </div>
-              <div class="info-card-corps">
-                <span class="info-card-label">Téléphone</span>
-                <span class="info-card-valeur">+1 (581) 688-3346</span>
-              </div>
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:publicusgroup2026@gmail.com" class="info-card revele delai-2">
-              <div class="info-card-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="info-card-corps">
-                <span class="info-card-label">Email</span>
-                <span class="info-card-valeur">publicusgroup2026@gmail.com</span>
-              </div>
-            </a>
-
-            <!-- Localisation -->
-            <div class="info-card revele delai-3" style="cursor:default;">
-              <div class="info-card-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div class="info-card-corps">
-                <span class="info-card-label">Adresse</span>
-                <span class="info-card-valeur">Moncton, Nouveau-Brunswick, Canada</span>
-              </div>
+          <!-- Email -->
+          <div class="info-bloc">
+            <div class="info-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
             </div>
+            <div>
+              <p class="info-texte-label">Email</p>
+              <p class="info-texte-valeur">
+                <a href="mailto:publicusgroup2026@gmail.com">publicusgroup2026@gmail.com</a>
+              </p>
+            </div>
+          </div>
 
-            <!-- Boutique en ligne -->
-            <a href="https://publicusgroup.mychariow.shop" target="_blank" rel="noopener" class="info-card revele delai-4">
-              <div class="info-card-icone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-                </svg>
-              </div>
-              <div class="info-card-corps">
-                <span class="info-card-label">Boutique en ligne</span>
-                <span class="info-card-valeur">publicusgroup.mychariow.shop</span>
-              </div>
-            </a>
+          <!-- Localisation -->
+          <div class="info-bloc">
+            <div class="info-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="info-texte-label">Localisation</p>
+              <p class="info-texte-valeur">Moncton, Nouveau-Brunswick, Canada</p>
+            </div>
+          </div>
 
-            <!-- Réseaux sociaux -->
-            <div class="contact-reseaux revele delai-5">
-              <p class="contact-reseaux-titre">Nos réseaux</p>
-              <div class="reseaux-liste">
-
-                <a href="https://www.instagram.com/publicus_group"
-                   class="btn-reseau-large"
-                   target="_blank" rel="noopener"
-                   aria-label="Suivre Publicus Group sur Instagram">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <!-- Réseaux sociaux -->
+          <div class="info-bloc">
+            <div class="info-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </div>
+            <div>
+              <p class="info-texte-label">Réseaux Sociaux</p>
+              <div style="display:flex; gap: 10px; margin-top: 8px;">
+                <a href="https://www.instagram.com/publicus_group" target="_blank" rel="noopener noreferrer" class="btn-reseau" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                     <circle cx="12" cy="12" r="4"/>
                     <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
                   </svg>
-                  Instagram
                 </a>
-
-                <a href="https://www.facebook.com/share/1AqqKRNQzz/"
-                   class="btn-reseau-large"
-                   target="_blank" rel="noopener"
-                   aria-label="Suivre Publicus Group sur Facebook">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <a href="https://www.facebook.com/share/1AqqKRNQzz/" target="_blank" rel="noopener noreferrer" class="btn-reseau" aria-label="Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                   </svg>
-                  Facebook
                 </a>
-
+                <a href="https://publicusgroup.mychariow.shop" target="_blank" rel="noopener noreferrer" class="btn-reseau" aria-label="Boutique">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                  </svg>
+                </a>
               </div>
             </div>
+          </div>
 
-            <!-- Disponibilité -->
-            <div class="dispo-card revele delai-6">
-              <p class="dispo-titre">
-                <span class="dispo-statut">En ligne</span>
-                &nbsp;· Disponibilité
-              </p>
-              <div class="dispo-ligne">
-                <span class="dispo-jour">Lundi – Vendredi</span>
-                <span class="dispo-heure">9h00 – 18h00 (HNE)</span>
-              </div>
-              <div class="dispo-ligne">
-                <span class="dispo-jour">Samedi</span>
-                <span class="dispo-heure">10h00 – 14h00</span>
-              </div>
-              <div class="dispo-ligne">
-                <span class="dispo-jour">Dimanche</span>
-                <span class="dispo-heure" style="color: var(--texte-leger);">Fermé</span>
-              </div>
-              <p style="font-size:0.78rem; color:var(--texte-leger); margin-top:10px;">
-                ⚡ Réponse garantie sous 24h ouvrables · Urgences sur WhatsApp
-              </p>
+          <!-- Horaires -->
+          <div class="info-bloc">
+            <div class="info-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
             </div>
-
+            <div style="flex: 1;">
+              <p class="info-texte-label">Disponibilité</p>
+              <table class="horaires-table" style="margin-top: 8px;">
+                <tr>
+                  <td>Lundi – Vendredi</td>
+                  <td>9h – 18h</td>
+                </tr>
+                <tr>
+                  <td>Samedi</td>
+                  <td>10h – 14h</td>
+                </tr>
+                <tr>
+                  <td>Dimanche</td>
+                  <td>Fermé</td>
+                </tr>
+              </table>
+            </div>
           </div>
-
-
-          <!-- ══ COLONNE DROITE : FORMULAIRE ══ -->
-          <div>
-            <div class="carte-glass formulaire-wrap revele-droite delai-1">
-
-              <h2 class="formulaire-titre">Envoyez-nous un message</h2>
-              <p class="formulaire-sous-titre">
-                Remplissez ce formulaire — nous vous répondons sous 24 heures.
-              </p>
-
-              <!--
-                FORMULAIRE DE CONTACT
-                - id="formulaire-contact" : ciblé par script.js pour la validation
-                - Tous les champs required sont validés avant soumission
-              -->
-              <form id="formulaire-contact" novalidate aria-label="Formulaire de contact">
-
-                <!-- Rangée 1 : Prénom + Nom -->
-                <div class="form-grille-2">
-
-                  <div class="champ-groupe">
-                    <label class="champ-label" for="prenom">Prénom *</label>
-                    <input
-                      type="text"
-                      id="prenom"
-                      name="prenom"
-                      class="champ-input"
-                      placeholder="Jean"
-                      required
-                      autocomplete="given-name"
-                    />
-                    <span class="msg-erreur" role="alert"></span>
-                  </div>
-
-                  <div class="champ-groupe">
-                    <label class="champ-label" for="nom">Nom *</label>
-                    <input
-                      type="text"
-                      id="nom"
-                      name="nom"
-                      class="champ-input"
-                      placeholder="Tremblay"
-                      required
-                      autocomplete="family-name"
-                    />
-                    <span class="msg-erreur" role="alert"></span>
-                  </div>
-
-                </div>
-
-                <!-- Rangée 2 : Email + Téléphone -->
-                <div class="form-grille-2">
-
-                  <div class="champ-groupe">
-                    <label class="champ-label" for="email">Email *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      class="champ-input"
-                      placeholder="jean@exemple.com"
-                      required
-                      autocomplete="email"
-                    />
-                    <span class="msg-erreur" role="alert"></span>
-                  </div>
-
-                  <div class="champ-groupe">
-                    <label class="champ-label" for="telephone">Téléphone</label>
-                    <input
-                      type="tel"
-                      id="telephone"
-                      name="telephone"
-                      class="champ-input"
-                      placeholder="+1 581 688-3346"
-                      autocomplete="tel"
-                    />
-                    <span class="msg-erreur" role="alert"></span>
-                  </div>
-
-                </div>
-
-                <!-- Entreprise -->
-                <div class="champ-groupe">
-                  <label class="champ-label" for="entreprise">Nom de votre entreprise</label>
-                  <input
-                    type="text"
-                    id="entreprise"
-                    name="entreprise"
-                    class="champ-input"
-                    placeholder="Mon Entreprise Inc."
-                    autocomplete="organization"
-                  />
-                  <span class="msg-erreur" role="alert"></span>
-                </div>
-
-                <!-- Service souhaité -->
-                <div class="champ-groupe">
-                  <label class="champ-label" for="service">Service souhaité *</label>
-                  <select id="service" name="service" class="champ-select" required>
-                    <option value="" disabled selected>— Choisissez un service —</option>
-                    <optgroup label="Présence Digitale">
-                      <option value="site-vitrine">Site Web Vitrine</option>
-                      <option value="site-ecommerce">Site Web E-commerce</option>
-                      <option value="identite-visuelle">Identité Visuelle Complète</option>
-                      <option value="maintenance">Maintenance & Hébergement</option>
-                    </optgroup>
-                    <optgroup label="Marketing & Croissance">
-                      <option value="strategie">Stratégie Marketing</option>
-                      <option value="reseaux-sociaux">Gestion Réseaux Sociaux</option>
-                      <option value="pub-payante">Campagnes Publicité Payante</option>
-                      <option value="video">Montage Vidéo & Contenu</option>
-                      <option value="seo">SEO Local & Google Business</option>
-                    </optgroup>
-                    <optgroup label="Tech & Logiciels">
-                      <option value="app-web">Application Web sur Mesure</option>
-                      <option value="logiciel-stocks">Logiciel Gestion Stocks</option>
-                      <option value="logiciel-rh">Logiciel RH Basique</option>
-                    </optgroup>
-                    <optgroup label="Agents IA">
-                      <option value="agent-receptionniste">Agent IA – Réceptionniste</option>
-                      <option value="agent-commandes">Agent IA – Prise de Commandes</option>
-                      <option value="agent-support">Agent IA – Support Client</option>
-                      <option value="agent-rh">Agent IA – RH & Recrutement</option>
-                    </optgroup>
-                    <optgroup label="Forfaits">
-                      <option value="pack-lancement">Pack Lancement Complet</option>
-                      <option value="pack-croissance">Pack Croissance 360°</option>
-                    </optgroup>
-                    <option value="autre">Autre / Je ne sais pas encore</option>
-                  </select>
-                  <span class="msg-erreur" role="alert"></span>
-                </div>
-
-                <!-- Budget indicatif -->
-                <div class="champ-groupe">
-                  <label class="champ-label" for="budget">Budget indicatif</label>
-                  <select id="budget" name="budget" class="champ-select">
-                    <option value="" disabled selected>— Votre budget approximatif —</option>
-                    <option value="moins-500">Moins de $500</option>
-                    <option value="500-2000">$500 – $2 000</option>
-                    <option value="2000-5000">$2 000 – $5 000</option>
-                    <option value="5000-15000">$5 000 – $15 000</option>
-                    <option value="plus-15000">Plus de $15 000</option>
-                  </select>
-                  <span class="msg-erreur" role="alert"></span>
-                </div>
-
-                <!-- Message -->
-                <div class="champ-groupe">
-                  <label class="champ-label" for="message">Décrivez votre projet *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="champ-textarea"
-                    placeholder="Décrivez votre projet, vos objectifs, votre audience cible… Plus vous êtes précis, meilleure sera notre réponse."
-                    required
-                  ></textarea>
-                  <span class="msg-erreur" role="alert"></span>
-                </div>
-
-                <!-- Consentement -->
-                <div class="champ-groupe" style="display:flex; align-items:flex-start; gap:12px;">
-                  <input
-                    type="checkbox"
-                    id="consentement"
-                    name="consentement"
-                    required
-                    style="
-                      width:  18px;
-                      height: 18px;
-                      margin-top: 2px;
-                      accent-color: var(--or);
-                      cursor: pointer;
-                      flex-shrink: 0;
-                    "
-                  />
-                  <label for="consentement"
-                         style="font-size:0.82rem; color:var(--texte-leger); cursor:pointer; line-height:1.6;">
-                    J'accepte que Publicus Group utilise les informations
-                    ci-dessus pour me recontacter. Aucun spam, promis.
-                  </label>
-                </div>
-
-                <!-- Bouton de soumission -->
-                <button type="submit" class="btn btn-primaire" style="width:100%; justify-content:center; padding:16px; font-size:0.92rem;">
-                  Envoyer mon message <span class="fleche">→</span>
-                </button>
-
-                <p style="text-align:center; font-size:0.78rem; color:var(--texte-leger); margin-top:12px;">
-                  🔒 Vos données sont confidentielles et ne seront jamais partagées.
-                </p>
-
-              </form>
-
-
-              <!--
-                MESSAGE DE SUCCÈS
-                - Masqué par défaut (display:none via .form-succes dans style.css)
-                - Affiché par script.js après envoi réussi
-              -->
-              <div id="form-succes"
-                   class="form-succes"
-                   role="alert"
-                   aria-live="polite">
-                <div class="succes-icone" aria-hidden="true">✅</div>
-                <h3 style="color: var(--blanc); font-size: 1.3rem;">Message envoyé !</h3>
-                <p style="max-width:360px; text-align:center;">
-                  Merci pour votre message. Notre équipe vous répondra
-                  sous <strong>24 heures ouvrables</strong>.
-                </p>
-                <div class="separateur"><div class="separateur-losange"></div></div>
-                <p style="font-size:0.82rem; color:var(--texte-leger); text-align:center;">
-                  En attendant, découvrez nos services ou suivez-nous sur les réseaux.
-                </p>
-                <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:var(--espace-sm);">
-                  <a href="services.html" class="btn btn-contour" style="font-size:0.82rem; padding:10px 20px;">
-                    Voir les services
-                  </a>
-                  <a href="index.html" class="btn btn-primaire" style="font-size:0.82rem; padding:10px 20px;">
-                    Retour à l'accueil
-                  </a>
-                </div>
-              </div>
-
-            </div><!-- /carte-glass -->
-          </div>
-
-        </div><!-- /contact-grille -->
-      </div>
-    </section>
-
-
-    <!-- FAQ RAPIDE -->
-    <section aria-label="Questions fréquentes">
-      <div class="container">
-
-        <div class="entete-section centre revele" style="margin-bottom:var(--espace-lg);">
-          <span class="label-section">Avant de nous contacter</span>
-          <h2>Questions fréquentes</h2>
-        </div>
-
-        <div class="grille-2">
-
-          <article class="carte-glass revele delai-1">
-            <h3>Quel est le délai de livraison ?</h3>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Un site vitrine est livré en <strong>5–10 jours ouvrables</strong>
-              grâce à notre processus IA optimisé. Les projets plus complexes
-              (apps, logiciels) varient entre 3 et 8 semaines.
-            </p>
-          </article>
-
-          <article class="carte-glass revele delai-2">
-            <h3>Comment se déroule la collaboration ?</h3>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Appel découverte 30 min → Proposition tarifée → Validation →
-              Livraison avec révisions incluses → Rapport de résultats.
-              Simple et transparent.
-            </p>
-          </article>
-
-          <article class="carte-glass revele delai-3">
-            <h3>Travaillez-vous à distance ?</h3>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Oui, 100% des projets sont gérés à distance via Zoom, email
-              et outils collaboratifs. Nous servons des clients au Canada,
-              en Afrique et en Europe.
-            </p>
-          </article>
-
-          <article class="carte-glass revele delai-4">
-            <h3>Quels modes de paiement acceptez-vous ?</h3>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Virement bancaire, Stripe (carte), PayPal, Mobile Money (Afrique).
-              50% à la signature, 50% à la livraison pour les projets ponctuels.
-            </p>
-          </article>
 
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+
+  <!-- FAQ RAPIDE -->
+  <section aria-label="Questions fréquentes">
+    <div class="container">
+      <div class="entete-section centre revele">
+        <span class="label-section">FAQ</span>
+        <h2>Questions Fréquentes</h2>
+      </div>
+
+      <div class="grille-2" style="max-width: 900px; margin: 0 auto;">
+
+        <div class="carte-glass revele delai-1">
+          <h3>Quel est le délai de réponse ?</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem;">
+            Nous répondons à toutes les demandes dans les 24 heures en jours ouvrables.
+            Pour les urgences, appelez directement au +1 (581) 688-3346.
+          </p>
+        </div>
+
+        <div class="carte-glass revele delai-2">
+          <h3>Comment se déroule le premier appel ?</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem;">
+            Un appel de découverte de 30 minutes, gratuit et sans engagement, pour comprendre
+            vos besoins et vous proposer la solution la plus adaptée.
+          </p>
+        </div>
+
+        <div class="carte-glass revele delai-3">
+          <h3>Travaillez-vous à distance ?</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem;">
+            Oui, 100% à distance. Nous servons des clients partout au Canada, en Afrique
+            et en Europe via Zoom, WhatsApp et email.
+          </p>
+        </div>
+
+        <div class="carte-glass revele delai-4">
+          <h3>Quels sont les modes de paiement ?</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem;">
+            Virement bancaire, e-transfert, et paiement en ligne sécurisé via notre boutique.
+            Des plans de paiement en plusieurs fois sont disponibles sur demande.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
   <!-- FOOTER -->
@@ -750,23 +592,41 @@
     <div class="container">
       <div class="footer-grille">
         <div>
-          <div class="footer-logo">
-            <img src="logo.png" alt="Logo Publicus Group" width="52" height="52" />
-            <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
-          </div>
-          <p class="footer-desc">Votre partenaire digital complet à Moncton, NB.</p>
+          <a href="index.html">
+            <div class="footer-logo">
+              <img src="assets/logo.png" alt="Logo Publicus Group" width="52" height="52" />
+              <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Votre partenaire digital complet à Moncton, NB. Le marketing
+            doit refléter vos valeurs — nous le faisons avec précision.
+          </p>
           <div class="footer-reseaux">
-            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
             </a>
-            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://publicusgroup.mychariow.shop" class="btn-reseau" aria-label="Boutique" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
             </a>
           </div>
         </div>
         <div>
           <p class="footer-col-titre">Navigation</p>
-          <ul class="footer-liens">
+          <ul class="footer-liens" role="list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="a-propos.html">À Propos</a></li>
@@ -774,33 +634,110 @@
           </ul>
         </div>
         <div>
-          <p class="footer-col-titre">Services rapides</p>
-          <ul class="footer-liens">
-            <li><a href="services.html#presence-digitale">Site web vitrine</a></li>
-            <li><a href="services.html#marketing">Gestion réseaux</a></li>
+          <p class="footer-col-titre">Services</p>
+          <ul class="footer-liens" role="list">
+            <li><a href="services.html#presence-digitale">Présence Digitale</a></li>
+            <li><a href="services.html#marketing">Marketing & Growth</a></li>
+            <li><a href="services.html#tech">Tech & Logiciels</a></li>
             <li><a href="services.html#agents-ia">Agents IA</a></li>
-            <li><a href="services.html#forfaits">Pack Lancement</a></li>
+            <li><a href="services.html#forfaits">Forfaits Groupés</a></li>
           </ul>
         </div>
         <div>
-          <p class="footer-col-titre">Contact direct</p>
+          <p class="footer-col-titre">Contact</p>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
             <p>+1 (581) 688-3346</p>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Moncton, Nouveau-Brunswick, Canada</p>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
             <p>publicusgroup2026@gmail.com</p>
           </div>
         </div>
       </div>
       <div class="footer-bas">
         <p>© 2025–2026 <a href="index.html">Publicus Group</a>. Tous droits réservés.</p>
-        <p>Conçu avec IA · Moncton, NB</p>
+        <p>Moncton, NB · Canada</p>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Validation du formulaire de contact -->
+  <script>
+    (function () {
+      const form    = document.getElementById('formulaire-contact');
+      const succes  = document.getElementById('form-succes');
+
+      if (!form) return;
+
+      function validerChamp(input) {
+        const groupe  = input.closest('.champ-groupe');
+        const erreur  = groupe ? groupe.querySelector('.msg-erreur') : null;
+        let valide    = true;
+
+        if (input.required && !input.value.trim()) {
+          valide = false;
+        } else if (input.type === 'email') {
+          valide = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+        }
+
+        if (input.tagName === 'SELECT' && input.required && !input.value) {
+          valide = false;
+        }
+
+        if (erreur) {
+          erreur.classList.toggle('visible', !valide);
+          input.classList.toggle('champ-erreur', !valide);
+        }
+
+        return valide;
+      }
+
+      // Validation au blur
+      form.querySelectorAll('.champ-input, .champ-textarea, .champ-select').forEach(function (el) {
+        el.addEventListener('blur', function () { validerChamp(el); });
+        el.addEventListener('input', function () { if (el.classList.contains('champ-erreur')) validerChamp(el); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var champRequis = form.querySelectorAll('[required]');
+        var toutValide  = true;
+
+        champRequis.forEach(function (el) {
+          if (!validerChamp(el)) toutValide = false;
+        });
+
+        if (!toutValide) return;
+
+        // Simuler l'envoi (remplacer par un fetch réel si backend disponible)
+        var btn = form.querySelector('[type="submit"]');
+        btn.textContent = 'Envoi en cours…';
+        btn.disabled    = true;
+
+        setTimeout(function () {
+          form.style.display    = 'none';
+          succes.classList.add('visible');
+          succes.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 1200);
+      });
+    })();
+  </script>
+
 </body>
 </html>

@@ -4,269 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── SEO unique à cette page ── -->
-  <title>À Propos | Publicus Group — Notre Histoire & Vision</title>
+  <title>À Propos | Publicus Group — Notre Histoire & Notre Vision</title>
   <meta name="description"
-        content="Découvrez l'histoire de Publicus Group, notre mission, nos valeurs et notre vision pour transformer le digital des PME de Moncton à l'Afrique. Solo + IA = révolution." />
-  <meta name="robots" content="index, follow" />
+        content="Découvrez l'histoire et la vision de Publicus Group : une agence digitale née à Moncton, NB, pour servir les PME et la diaspora africaine avec des solutions de qualité à prix accessibles." />
+  <meta name="keywords"
+        content="à propos Publicus Group, histoire agence digitale Moncton, vision, équipe, valeurs" />
+  <meta name="author"  content="Publicus Group" />
+  <meta name="robots"  content="index, follow" />
 
-  <link rel="icon" type="image/png" href="logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:title"       content="À Propos | Publicus Group — L'Agence Digitale de Moncton" />
+  <meta property="og:description" content="Une vision claire, une mission précise : démocratiser l'accès à des solutions digitales de qualité pour les PME et entrepreneurs ambitieux." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://publicusgroup.mychariow.shop/a-propos.html" />
+  <meta property="og:image"       content="assets/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ── Styles propres à a-propos.html ── -->
   <style>
-
-    /* ── Hero éditorial ── */
-    .hero-page {
-      padding:    calc(var(--hauteur-nav) + 70px) 0 70px;
-      position:   relative;
-      overflow:   hidden;
+    /* ── Hero page intérieure ── */
+    .hero-interieur-page {
+      padding: calc(var(--hauteur-nav) + 80px) 0 80px;
+      text-align: center;
+    }
+    .hero-interieur-page h1 { margin: 16px 0 20px; }
+    .hero-interieur-page .sous-titre {
+      font-size:   1.08rem;
+      font-weight: 300;
+      color:       var(--texte-attenue);
+      max-width:   560px;
+      margin:      0 auto;
+      line-height: 1.85;
     }
 
-    .hero-page::before {
-      content:  '';
-      position: absolute;
-      inset:    0;
-      background: radial-gradient(
-        ellipse 70% 55% at 30% 40%,
-        rgba(245, 197, 24, 0.09) 0%,
-        transparent 65%
-      );
-      pointer-events: none;
-    }
-
-    .hero-a-propos {
-      display:     grid;
+    /* ── Section histoire en 2 colonnes ── */
+    .histoire-grille {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:         var(--espace-xl);
+      gap: var(--espace-xl);
       align-items: center;
     }
 
-    /* ── Grande citation d'intro ── */
-    .citation-hero {
-      font-family:  var(--police-corps);
-      font-size:    clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight:  300;
-      font-style:   italic;
-      color:        var(--blanc);
-      line-height:  1.65;
-      border-left:  3px solid var(--or);
-      padding-left: var(--espace-md);
-    }
-
-    .citation-hero em {
-      color:      var(--or);
-      font-style: normal;
-    }
-
-    /* Bloc visuel à propos */
-    .visuel-a-propos {
-      display:         flex;
-      align-items:     center;
-      justify-content: center;
-      position:        relative;
-    }
-
-    .logo-about-wrap {
-      position: relative;
-      padding:  var(--espace-xl);
-    }
-
-    .logo-about-bg {
-      position:      absolute;
-      inset:         0;
-      background:    var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      border:        1px solid var(--glass-bordure);
-      border-radius: var(--rayon-xl);
-    }
-
-    .logo-about-img {
-      width:    180px;
-      height:   180px;
-      object-fit: contain;
-      position: relative;
-      z-index:  1;
-      filter:   drop-shadow(0 0 30px rgba(245,197,24,0.45));
-    }
-
-    /* Badges flottants autour du logo */
-    .badge-flottant {
-      position:      absolute;
-      background:    var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      border:        1px solid var(--glass-bordure);
-      border-radius: 10px;
-      padding:       10px 14px;
-      font-family:   var(--police-sub);
-      font-size:     0.8rem;
-      font-weight:   700;
-      letter-spacing: 0.08em;
-      color:         var(--or);
-      white-space:   nowrap;
-      z-index:       2;
-    }
-
-    .badge-flottant:nth-child(2) { top: 10px; right: -20px; }
-    .badge-flottant:nth-child(3) { bottom: 30px; left: -20px; }
-    .badge-flottant:nth-child(4) { bottom: 10px; right: 0; }
-
-    /* ── Sections éditoriales ── */
-    .section-editoriale {
-      display:     grid;
-      grid-template-columns: 1fr 1fr;
-      gap:         var(--espace-xl);
-      align-items: start;
-      margin-bottom: var(--espace-xl);
-    }
-
-    .section-editoriale.inverse { direction: rtl; }
-    .section-editoriale.inverse > * { direction: ltr; }
-
-    /* ── Timeline du parcours ── */
+    /* ── Timeline ── */
     .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       position: relative;
-      padding-left: 28px;
     }
 
-    /* Ligne verticale de la timeline */
     .timeline::before {
-      content:   '';
-      position:  absolute;
-      left:      7px;
-      top:       8px;
-      bottom:    0;
-      width:     2px;
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
       background: linear-gradient(to bottom, var(--or), transparent);
     }
 
     .timeline-item {
-      position:      relative;
-      margin-bottom: var(--espace-lg);
+      display: flex;
+      gap: var(--espace-md);
+      padding-bottom: var(--espace-lg);
+      position: relative;
     }
 
-    /* Point de la timeline */
-    .timeline-item::before {
-      content:       '';
-      position:      absolute;
-      left:          -24px;
-      top:           8px;
-      width:         12px;
-      height:        12px;
+    .timeline-point {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background:    var(--or);
-      border:        3px solid var(--noir);
-      box-shadow:    0 0 10px var(--or-glow);
+      background: var(--or);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--police-titre);
+      font-size: 0.9rem;
+      color: var(--sombre);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
     }
 
-    .timeline-annee {
-      font-family:    var(--police-sub);
-      font-size:      0.76rem;
-      font-weight:    700;
-      letter-spacing: 0.2em;
-      color:          var(--or);
+    .timeline-contenu {
+      padding-top: 8px;
+    }
+
+    .timeline-date {
+      font-family: var(--police-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      margin-bottom:  6px;
+      color: var(--or);
+      margin-bottom: 6px;
     }
 
-    .timeline-titre {
-      font-family:    var(--police-sub);
-      font-size:      1.1rem;
-      font-weight:    700;
-      color:          var(--blanc);
-      margin-bottom:  8px;
-    }
+    .timeline-contenu h3 { margin-bottom: 6px; }
+    .timeline-contenu p  { font-size: 0.9rem; }
 
-    .timeline-desc {
-      font-size:  0.88rem;
-      color:      var(--texte-attenue);
-      line-height: 1.7;
-    }
-
-    /* ── Cartes de valeurs ── */
-    .grille-valeurs {
+    /* ── Valeurs en grille ── */
+    .valeurs-grille {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:     var(--espace-md);
+      gap: var(--espace-md);
     }
 
     .carte-valeur {
-      /* Hérite de .carte-glass */
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-bordure);
+      border-radius: var(--rayon-lg);
+      padding: var(--espace-lg);
       text-align: center;
+      transition: border-color var(--transition-mid), transform var(--transition-mid);
+    }
+
+    .carte-valeur:hover {
+      border-color: var(--or);
+      transform: translateY(-6px);
     }
 
     .valeur-emoji {
-      font-size:     2.5rem;
-      display:       block;
+      font-size: 2.5rem;
+      display: block;
       margin-bottom: var(--espace-sm);
     }
 
-    /* ── Vision géographique ── */
-    .grille-marches {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:     var(--espace-md);
-    }
+    .carte-valeur h3 { margin-bottom: 10px; }
+    .carte-valeur p  { font-size: 0.88rem; }
 
-    .carte-marche {
-      /* Hérite de .carte-glass */
+    /* ── Vision statement ── */
+    .vision-bloc {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--or-bordure);
+      border-radius: var(--rayon-xl);
+      padding: var(--espace-xl) var(--espace-2xl);
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .marche-drapeau {
-      font-size:     2.2rem;
-      display:       block;
-      margin-bottom: 10px;
+    .vision-bloc::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 40px;
+      font-family: var(--police-titre);
+      font-size: 12rem;
+      color: rgba(245, 197, 24, 0.06);
+      line-height: 1;
+      pointer-events: none;
     }
 
-    .marche-statut {
-      display:        inline-block;
-      font-family:    var(--police-sub);
-      font-size:      0.68rem;
-      font-weight:    700;
-      letter-spacing: 0.15em;
+    .vision-citation {
+      font-family: var(--police-titre);
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: var(--blanc);
+      line-height: 1.2;
+      margin-bottom: var(--espace-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    .vision-citation em { color: var(--or); }
+
+    .vision-auteur {
+      font-family: var(--police-sub);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      padding:        3px 10px;
-      border-radius:  100px;
-      margin-top:     8px;
+      color: var(--texte-leger);
     }
 
-    .statut-actif {
-      background: rgba(46, 196, 182, 0.15);
-      color:      #2EC4B6;
-      border:     1px solid rgba(46, 196, 182, 0.3);
+    /* ── Section marchés ── */
+    .marche-item {
+      display: flex;
+      align-items: center;
+      gap: var(--espace-md);
+      padding: var(--espace-md);
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-bordure);
+      border-radius: var(--rayon);
+      transition: border-color var(--transition-rapide);
     }
 
-    .statut-prochain {
-      background: var(--or-subtil);
-      color:      var(--or);
-      border:     1px solid var(--or-bordure);
+    .marche-item:hover { border-color: var(--or); }
+
+    .marche-flag {
+      font-size: 2rem;
+      flex-shrink: 0;
     }
 
-    .statut-vision {
-      background: rgba(123, 45, 139, 0.15);
-      color:      #B87FCA;
-      border:     1px solid rgba(123, 45, 139, 0.3);
-    }
+    .marche-item h3 { margin-bottom: 4px; font-size: 1rem; }
+    .marche-item p  { font-size: 0.85rem; }
 
-    /* ── Responsive ── */
     @media (max-width: 900px) {
-      .hero-a-propos       { grid-template-columns: 1fr; }
-      .visuel-a-propos     { display: none; }
-      .section-editoriale  { grid-template-columns: 1fr; }
-      .section-editoriale.inverse { direction: ltr; }
-      .grille-valeurs      { grid-template-columns: 1fr 1fr; }
-      .grille-marches      { grid-template-columns: 1fr 1fr; }
+      .histoire-grille { grid-template-columns: 1fr; }
+      .valeurs-grille  { grid-template-columns: 1fr; }
+      .vision-bloc     { padding: var(--espace-xl) var(--espace-md); }
     }
-
-    @media (max-width: 600px) {
-      .grille-valeurs  { grid-template-columns: 1fr; }
-      .grille-marches  { grid-template-columns: 1fr 1fr; }
-    }
-
   </style>
 </head>
 
@@ -275,8 +220,8 @@
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-interieur">
-      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Accueil">
-        <img src="logo.png" alt="Logo Publicus Group" width="44" height="44" />
+      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Retour à l'accueil">
+        <img src="assets/logo.png" alt="Publicus Group Logo" width="44" height="44" />
         <span class="nav-logo-texte">PUBLICUS <span>GROUP</span></span>
       </a>
       <ul class="nav-liens" role="list">
@@ -286,351 +231,272 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn-nav">Un appel suffit →</a>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <button class="burger"
+              aria-label="Ouvrir le menu de navigation"
+              aria-expanded="false"
+              aria-controls="menu-mobile">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu mobile">
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu de navigation mobile">
     <a href="index.html">Accueil</a>
     <a href="services.html">Services</a>
     <a href="a-propos.html">À Propos</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn-nav" style="margin-top:8px;">Un appel suffit →</a>
+    <div class="menu-mobile-contact"><p>+1 (581) 688-3346</p></div>
   </div>
 
 
-  <!-- ══ HERO ÉDITORIAL ══ -->
-  <header class="hero-page" role="banner">
-    <div class="container" style="position:relative; z-index:1;">
-      <div class="hero-a-propos">
+  <!-- HERO PAGE -->
+  <section class="hero-interieur-page" aria-label="Titre de la page À Propos">
+    <div class="container">
+      <div class="revele">
+        <span class="badge">Notre histoire</span>
+      </div>
+      <h1 class="revele delai-1">
+        À <em>Propos</em>
+      </h1>
+      <p class="sous-titre revele delai-2">
+        Une agence digitale née d'une conviction : chaque entrepreneur
+        mérite des outils de classe mondiale, peu importe sa taille ou son budget.
+      </p>
+    </div>
+  </section>
 
-        <!-- Colonne gauche : Intro -->
-        <div>
-          <span class="badge revele" style="margin-bottom:20px; display:inline-flex;">
-            Notre histoire
-          </span>
 
-          <!-- H1 de la page À propos -->
-          <h1 class="revele delai-1" style="font-size: clamp(2.8rem,7vw,5rem);">
-            Publicus <em>Group</em>
-          </h1>
-
-          <blockquote class="citation-hero revele delai-2" style="margin: 24px 0 36px;">
-            "Le marketing ne doit pas juste augmenter vos ventes — il doit
-            <em>refléter les valeurs</em> que porte votre entreprise."
-          </blockquote>
-
-          <div class="revele delai-3" style="display:flex; gap:16px; flex-wrap:wrap;">
-            <a href="contact.html" class="btn btn-primaire">
-              Travailler avec nous <span class="fleche">→</span>
-            </a>
-            <a href="services.html" class="btn btn-contour">
-              Nos services
-            </a>
-          </div>
-        </div>
-
-        <!-- Colonne droite : Visuel -->
-        <div class="visuel-a-propos revele-droite delai-2" aria-hidden="true">
-          <div class="logo-about-wrap">
-            <div class="logo-about-bg"></div>
-            <img src="logo.png" alt="" class="logo-about-img" />
-            <span class="badge-flottant">Solo + IA</span>
-            <span class="badge-flottant">Moncton, NB</span>
-            <span class="badge-flottant">$28k+ / mois</span>
-          </div>
-        </div>
-
+  <!-- VISION -->
+  <section aria-label="Notre vision">
+    <div class="container">
+      <div class="vision-bloc revele">
+        <p class="vision-citation">
+          « Le digital ne devrait pas être un privilège de luxe.<br />
+          C'est un <em>droit pour chaque entrepreneur ambitieux.</em> »
+        </p>
+        <p class="vision-auteur">— Publicus Group, Moncton, NB · 2025</p>
       </div>
     </div>
-  </header>
+  </section>
 
 
-  <main>
+  <!-- HISTOIRE -->
+  <section aria-label="Notre histoire" style="padding-top: 0;">
+    <div class="container">
+      <div class="histoire-grille">
 
-    <!-- ══ QUI NOUS SOMMES ══ -->
-    <section aria-label="Qui est Publicus Group">
-      <div class="container">
-        <div class="section-editoriale">
-
-          <!-- Texte gauche -->
-          <div class="revele-gauche">
-            <span class="label-section">Qui nous sommes</span>
-            <h2>Une machine de valeur, propulsée par l'IA</h2>
-            <p style="margin-top: 16px;">
-              Publicus Group est une agence digitale d'élite basée à Moncton,
-              Nouveau-Brunswick, Canada. Notre modèle opératoire est simple et
-              révolutionnaire : <strong>Solo + IA</strong>.
-            </p>
-            <p style="margin-top: 14px;">
-              Un seul opérateur stratégique, amplifié par les meilleurs outils
-              d'intelligence artificielle — Claude, GPT-4o, Midjourney, Cursor —
-              pour livrer la puissance d'une équipe de 5 experts, à des tarifs
-              accessibles aux PME et TPE.
-            </p>
-            <p style="margin-top: 14px;">
-              Notre philosophie : <em>chaque dollar investi dans votre marketing
-              doit refléter vos valeurs, pas juste augmenter vos ventes.</em>
-            </p>
-          </div>
-
-          <!-- Métriques droite -->
-          <div class="revele-droite">
-            <div class="grille-2">
-              <div class="carte-glass" style="text-align:center; padding:var(--espace-md);">
-                <span class="stat-chiffre" data-cible="18" data-suffixe="">0</span>
-                <span class="stat-label">Services</span>
-              </div>
-              <div class="carte-glass" style="text-align:center; padding:var(--espace-md);">
-                <span class="stat-chiffre" data-cible="95" data-suffixe="%">0</span>
-                <span class="stat-label">Marge max</span>
-              </div>
-              <div class="carte-glass" style="text-align:center; padding:var(--espace-md);">
-                <span class="stat-chiffre" data-cible="28" data-suffixe="k">0</span>
-                <span class="stat-label">Rev. max/mois</span>
-              </div>
-              <div class="carte-glass" style="text-align:center; padding:var(--espace-md);">
-                <span class="stat-chiffre" data-cible="5" data-suffixe="">0</span>
-                <span class="stat-label">Marchés cibles</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ══ NOTRE PARCOURS — TIMELINE ══ -->
-    <section aria-label="Historique et parcours de Publicus Group">
-      <div class="container">
-
-        <div class="entete-section revele">
-          <span class="label-section">Notre parcours</span>
-          <h2>De l'idée à l'exécution</h2>
-        </div>
-
-        <div class="grille-2">
-
-          <div class="timeline revele-gauche">
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2024 — Genèse</p>
-              <p class="timeline-titre">L'idée germe à Moncton</p>
-              <p class="timeline-desc">
-                Constat : les PME de la région Atlantique paient trop cher pour
-                un service de mauvaise qualité. Les agences locales facturent
-                des prestations que l'IA peut optimiser à 90% des coûts.
-              </p>
-            </div>
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2025 — Lancement</p>
-              <p class="timeline-titre">Publicus Group est né</p>
-              <p class="timeline-desc">
-                Création officielle de l'entreprise à Moncton, NB. Développement
-                du catalogue de 18 services. Acquisition des 2 premiers clients.
-                Validation du modèle Solo + IA.
-              </p>
-            </div>
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2026 — Accélération</p>
-              <p class="timeline-titre">Scale & Expansion africaine</p>
-              <p class="timeline-desc">
-                Ouverture des filiales virtuelles Burkina Faso et Côte d'Ivoire.
-                Lancement de la boutique en ligne. Cap $15k MRR.
-                Premier recrutement prévu.
-              </p>
-            </div>
-
-          </div>
-
-          <div class="timeline revele-droite" style="padding-left: 28px;">
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2027 — Maturité</p>
-              <p class="timeline-titre">Leadership régional</p>
-              <p class="timeline-desc">
-                Publicus Group s'impose comme le partenaire digital de référence
-                en Atlantique et pour la diaspora africaine du Canada.
-                Équipe de 4–6 personnes. Cap $28k MRR.
-              </p>
-            </div>
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2028 — Mutation</p>
-              <p class="timeline-titre">SaaS & Holding multifiliales</p>
-              <p class="timeline-desc">
-                Transformation du stack IA interne en produit SaaS white-label.
-                Création d'une Académie Publicus (formations). Holding avec
-                filiales en Afrique et Europe. Cap $1M ARR.
-              </p>
-            </div>
-
-            <div class="timeline-item">
-              <p class="timeline-annee">2030 — Vision</p>
-              <p class="timeline-titre">La licorne africaine-canadienne</p>
-              <p class="timeline-desc">
-                Publicus Group : plateforme SaaS reconnue, 5+ pays, 50+
-                partenaires revendeurs, Académie avec 10 000 apprenants.
-                L'entreprise innarêtable.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ══ NOS VALEURS ══ -->
-    <section aria-label="Les valeurs de Publicus Group">
-      <div class="container">
-
-        <div class="entete-section centre revele">
-          <span class="label-section">Ce qui nous guide</span>
-          <h2>Nos Valeurs</h2>
-        </div>
-
-        <div class="grille-valeurs">
-
-          <article class="carte-glass carte-valeur revele delai-1">
-            <span class="valeur-emoji" aria-hidden="true">⚡</span>
-            <h3>Vitesse d'exécution</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              Livrer vite sans sacrifier la qualité. Chaque jour sans résultats
-              est un coût pour notre client.
-            </p>
-          </article>
-
-          <article class="carte-glass carte-valeur revele delai-2">
-            <span class="valeur-emoji" aria-hidden="true">🎯</span>
-            <h3>Excellence du 1%</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              Jamais de solutions génériques. Chaque conseil, chaque livrable
-              est de niveau consulting premium.
-            </p>
-          </article>
-
-          <article class="carte-glass carte-valeur revele delai-3">
-            <span class="valeur-emoji" aria-hidden="true">🤝</span>
-            <h3>Transparence totale</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              Tarifs clairs, marges visibles, résultats mesurables. Pas de
-              magie noire, que de la stratégie et de l'IA.
-            </p>
-          </article>
-
-          <article class="carte-glass carte-valeur revele delai-4">
-            <span class="valeur-emoji" aria-hidden="true">🌍</span>
-            <h3>Vision globale</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              Moncton comme base de lancement, l'Afrique et le monde comme
-              ambition immédiate. Penser global, agir local.
-            </p>
-          </article>
-
-          <article class="carte-glass carte-valeur revele delai-5">
-            <span class="valeur-emoji" aria-hidden="true">🔄</span>
-            <h3>Innovation continue</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              L'IA évolue chaque semaine. Notre stack aussi. Toujours 2
-              coups d'avance sur la concurrence.
-            </p>
-          </article>
-
-          <article class="carte-glass carte-valeur revele delai-6">
-            <span class="valeur-emoji" aria-hidden="true">💎</span>
-            <h3>Valeurs authentiques</h3>
-            <div class="ligne-or" style="margin: 10px auto;"></div>
-            <p style="font-size:0.88rem;">
-              Le marketing doit refléter QUI vous êtes. Pas juste vendre —
-              créer une connexion durable avec votre audience.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ══ NOTRE VISION GÉOGRAPHIQUE ══ -->
-    <section aria-label="Marchés cibles de Publicus Group">
-      <div class="container">
-
-        <div class="entete-section centre revele">
-          <span class="label-section">Notre rayon d'action</span>
-          <h2>De Moncton au Monde</h2>
-          <p style="max-width:500px; margin: 14px auto 0;">
-            Nous opérons depuis Moncton avec une vision d'expansion
-            africaine et mondiale clairement définie.
+        <!-- Colonne gauche : Texte narrative -->
+        <div class="revele-gauche">
+          <span class="label-section">Qui nous sommes</span>
+          <h2>L'Histoire de Publicus Group</h2>
+          <p style="margin: 20px 0 16px;">
+            Publicus Group est né d'un constat simple mais frappant : les PME et
+            entrepreneurs africains au Canada — et dans le monde — n'ont pas accès
+            aux mêmes ressources digitales que les grandes entreprises.
+          </p>
+          <p style="margin-bottom: 16px;">
+            Les agences traditionnelles facturent des tarifs prohibitifs. Les freelances
+            manquent souvent d'une vision stratégique globale. Il manquait un acteur
+            capable de combiner la <strong>rigueur d'un consultant senior</strong>
+            avec l'agilité et les tarifs d'une startup.
+          </p>
+          <p>
+            Basés à Moncton, au Nouveau-Brunswick, nous servons des clients à travers
+            le Canada, l'Afrique francophone et la diaspora africaine — avec une
+            compréhension profonde des nuances culturelles et des marchés émergents.
           </p>
         </div>
 
-        <div class="grille-marches">
-
-          <article class="carte-glass carte-marche revele delai-1">
-            <span class="marche-drapeau" aria-hidden="true">🇨🇦</span>
-            <h3>Canada Atlantique</h3>
-            <p style="font-size:0.85rem;">Moncton, Fredericton, Halifax. PME et TPE de la région.</p>
-            <span class="marche-statut statut-actif">Actif 2025</span>
-          </article>
-
-          <article class="carte-glass carte-marche revele delai-2">
-            <span class="marche-drapeau" aria-hidden="true">🌍</span>
-            <h3>Burkina Faso</h3>
-            <p style="font-size:0.85rem;">PME locales, e-commerce, agents IA. Marché émergent prioritaire.</p>
-            <span class="marche-statut statut-prochain">Prochain 2026</span>
-          </article>
-
-          <article class="carte-glass carte-marche revele delai-3">
-            <span class="marche-drapeau" aria-hidden="true">🌍</span>
-            <h3>Côte d'Ivoire</h3>
-            <p style="font-size:0.85rem;">Paiements mobiles, IA, marketing. Économie digitale en plein essor.</p>
-            <span class="marche-statut statut-prochain">Prochain 2026</span>
-          </article>
-
-          <article class="carte-glass carte-marche revele delai-4">
-            <span class="marche-drapeau" aria-hidden="true">🌐</span>
-            <h3>Europe & Monde</h3>
-            <p style="font-size:0.85rem;">Diaspora africaine, clients internationaux via SaaS.</p>
-            <span class="marche-statut statut-vision">Vision 2027+</span>
-          </article>
-
+        <!-- Colonne droite : Timeline -->
+        <div class="revele-droite">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-point">01</div>
+              <div class="timeline-contenu">
+                <p class="timeline-date">L'Idée · 2024</p>
+                <h3>Un Constat, Une Décision</h3>
+                <p>
+                  Face au manque d'accès à des solutions digitales abordables
+                  pour les PME et entrepreneurs issus de la diaspora africaine.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-point">02</div>
+              <div class="timeline-contenu">
+                <p class="timeline-date">La Construction · 2025</p>
+                <h3>Bâtir l'Expertise</h3>
+                <p>
+                  Développement d'un catalogue complet de 18 services, des processus
+                  de livraison optimisés et des partenariats technologiques clés.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-point">03</div>
+              <div class="timeline-contenu">
+                <p class="timeline-date">Le Lancement · 2025</p>
+                <h3>Premiers Clients, Premiers Succès</h3>
+                <p>
+                  Lancement officiel à Moncton avec les premières réalisations :
+                  sites web, campagnes marketing et agents IA déployés.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-point">04</div>
+              <div class="timeline-contenu">
+                <p class="timeline-date">La Vision · 2026+</p>
+                <h3>Expansion Globale</h3>
+                <p>
+                  Croissance vers l'Afrique francophone, le marché caribéen
+                  et les communautés de la diaspora à travers l'Amérique du Nord.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- ══ CTA FINAL ══ -->
-    <section style="padding-top: 0; padding-bottom: var(--espace-2xl);">
-      <div class="container">
-        <div class="carte-glass revele" style="text-align:center; padding: var(--espace-xl);">
-          <span class="label-section" style="justify-content:center; margin-bottom:var(--espace-sm);">
-            Rejoignez l'aventure
-          </span>
-          <h2 style="margin-bottom: 16px;">Faisons quelque chose de grand ensemble</h2>
-          <p style="max-width:500px; margin: 0 auto 32px;">
-            Que vous soyez une PME de Moncton, un entrepreneur africain
-            ou un visionnaire de la diaspora — nous avons le service qu'il vous faut.
+  <!-- NOS VALEURS -->
+  <section aria-label="Nos valeurs">
+    <div class="container">
+      <div class="entete-section centre revele">
+        <span class="label-section">Ce qui nous guide</span>
+        <h2>Nos Valeurs Fondamentales</h2>
+      </div>
+
+      <div class="valeurs-grille">
+        <div class="carte-valeur revele delai-1">
+          <span class="valeur-emoji">🎯</span>
+          <h3>Excellence</h3>
+          <p>
+            Chaque livrable passe par un standard de qualité élevé.
+            Nous ne livrons pas "bon" quand nous pouvons livrer "exceptionnel".
           </p>
-          <a href="contact.html" class="btn btn-primaire">
-            Démarrer maintenant <span class="fleche">→</span>
-          </a>
+        </div>
+
+        <div class="carte-valeur revele delai-2">
+          <span class="valeur-emoji">⚡</span>
+          <h3>Rapidité</h3>
+          <p>
+            Le business ne peut pas attendre. Nous avons optimisé nos processus
+            pour des délais de livraison en jours, pas en mois.
+          </p>
+        </div>
+
+        <div class="carte-valeur revele delai-3">
+          <span class="valeur-emoji">🤝</span>
+          <h3>Transparence</h3>
+          <p>
+            Des tarifs clairs, des délais tenus, des rapports réguliers.
+            Vous savez toujours où en est votre projet.
+          </p>
+        </div>
+
+        <div class="carte-valeur revele delai-4">
+          <span class="valeur-emoji">🌍</span>
+          <h3>Accessibilité</h3>
+          <p>
+            Des solutions de qualité agence à des prix PME. Nous croyons que
+            la puissance du digital doit être accessible à tous.
+          </p>
+        </div>
+
+        <div class="carte-valeur revele delai-5">
+          <span class="valeur-emoji">💡</span>
+          <h3>Innovation</h3>
+          <p>
+            En veille permanente sur les meilleures technologies, nous
+            intégrons les outils les plus performants du marché.
+          </p>
+        </div>
+
+        <div class="carte-valeur revele delai-6">
+          <span class="valeur-emoji">🌱</span>
+          <h3>Impact</h3>
+          <p>
+            Chaque client qu'on aide à croître renforce une communauté.
+            Notre succès est indissociable du vôtre.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+
+  <!-- MARCHÉS CIBLES -->
+  <section aria-label="Nos marchés cibles">
+    <div class="container">
+      <div class="entete-section centre revele">
+        <span class="label-section">Notre portée</span>
+        <h2>5 Marchés Cibles</h2>
+        <p style="max-width: 520px; margin: 14px auto 0;">
+          Basés à Moncton, nous pensons et agissons à l'échelle globale,
+          avec une expertise unique sur les marchés de la diaspora.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--espace-sm); max-width: 860px; margin: 0 auto;">
+        <div class="marche-item revele delai-1">
+          <span class="marche-flag">🇨🇦</span>
+          <div>
+            <h3>Canada Francophone</h3>
+            <p>Nouveau-Brunswick, Québec, Ontario et communautés francophones.</p>
+          </div>
+        </div>
+        <div class="marche-item revele delai-2">
+          <span class="marche-flag">🌍</span>
+          <div>
+            <h3>Afrique Francophone</h3>
+            <p>Sénégal, Côte d'Ivoire, Cameroun, RDC, Mali et diaspora mondiale.</p>
+          </div>
+        </div>
+        <div class="marche-item revele delai-3">
+          <span class="marche-flag">🇺🇸</span>
+          <div>
+            <h3>États-Unis</h3>
+            <p>Communautés africaines et francophones aux USA (NY, Atlanta, DC).</p>
+          </div>
+        </div>
+        <div class="marche-item revele delai-4">
+          <span class="marche-flag">🇫🇷</span>
+          <div>
+            <h3>France & Europe</h3>
+            <p>Entrepreneurs africains basés en France et dans l'espace Schengen.</p>
+          </div>
+        </div>
+        <div class="marche-item revele delai-5" style="grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%;">
+          <span class="marche-flag">🌐</span>
+          <div>
+            <h3>Marchés Émergents</h3>
+            <p>Tout entrepreneur à fort potentiel cherchant une croissance digitale rapide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="container">
+      <div class="revele" style="background: var(--or); border-radius: var(--rayon-xl); padding: 52px var(--espace-xl); display:grid; grid-template-columns: 1fr auto; align-items:center; gap: var(--espace-lg); position:relative; overflow:hidden;">
+        <div style="position:absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background:rgba(0,0,0,0.07);"></div>
+        <div>
+          <h2 style="color: var(--sombre);">Rejoignez l'aventure Publicus Group</h2>
+          <p style="color: rgba(26, 10, 0, 0.65); margin-top: 8px;">Parlons de votre projet et construisons ensemble votre présence digitale.</p>
+        </div>
+        <a href="contact.html" class="btn btn-sombre">
+          Nous contacter <span class="fleche">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
 
   <!-- FOOTER -->
@@ -638,23 +504,41 @@
     <div class="container">
       <div class="footer-grille">
         <div>
-          <div class="footer-logo">
-            <img src="logo.png" alt="Logo Publicus Group" width="52" height="52" />
-            <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
-          </div>
-          <p class="footer-desc">Votre partenaire digital complet à Moncton, NB.</p>
+          <a href="index.html">
+            <div class="footer-logo">
+              <img src="assets/logo.png" alt="Logo Publicus Group" width="52" height="52" />
+              <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Votre partenaire digital complet à Moncton, NB. Le marketing
+            doit refléter vos valeurs — nous le faisons avec précision.
+          </p>
           <div class="footer-reseaux">
-            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
             </a>
-            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://publicusgroup.mychariow.shop" class="btn-reseau" aria-label="Boutique" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
             </a>
           </div>
         </div>
         <div>
           <p class="footer-col-titre">Navigation</p>
-          <ul class="footer-liens">
+          <ul class="footer-liens" role="list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="a-propos.html">À Propos</a></li>
@@ -662,29 +546,42 @@
           </ul>
         </div>
         <div>
-          <p class="footer-col-titre">À Propos</p>
-          <ul class="footer-liens">
-            <li><a href="a-propos.html#qui">Qui sommes-nous</a></li>
-            <li><a href="a-propos.html#parcours">Notre parcours</a></li>
-            <li><a href="a-propos.html#valeurs">Nos valeurs</a></li>
-            <li><a href="a-propos.html#vision">Notre vision</a></li>
+          <p class="footer-col-titre">Services</p>
+          <ul class="footer-liens" role="list">
+            <li><a href="services.html#presence-digitale">Présence Digitale</a></li>
+            <li><a href="services.html#marketing">Marketing & Growth</a></li>
+            <li><a href="services.html#tech">Tech & Logiciels</a></li>
+            <li><a href="services.html#agents-ia">Agents IA</a></li>
+            <li><a href="services.html#forfaits">Forfaits Groupés</a></li>
           </ul>
         </div>
         <div>
           <p class="footer-col-titre">Contact</p>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
             <p>+1 (581) 688-3346</p>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>Moncton, NB, Canada</p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Moncton, Nouveau-Brunswick, Canada</p>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p>publicusgroup2026@gmail.com</p>
           </div>
         </div>
       </div>
       <div class="footer-bas">
         <p>© 2025–2026 <a href="index.html">Publicus Group</a>. Tous droits réservés.</p>
-        <p>Conçu avec IA · Moncton, NB</p>
+        <p>Moncton, NB · Canada</p>
       </div>
     </div>
   </footer>

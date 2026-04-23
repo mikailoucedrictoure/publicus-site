@@ -4,216 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── SEO unique à cette page ── -->
-  <title>Services | Publicus Group — 18 Solutions Digitales avec IA</title>
+  <title>Services | Publicus Group — Stratégie Digitale & Solutions Sur Mesure</title>
   <meta name="description"
-        content="Découvrez les 18 services de Publicus Group : sites web, marketing IA, agents IA autonomes, logiciels sur mesure et forfaits groupés. Tarifs clairs, marges élevées." />
-  <meta name="robots" content="index, follow" />
+        content="Découvrez les 18 services de Publicus Group : présence digitale, marketing & croissance, tech & logiciels, agents IA et forfaits groupés. Qualité agence, prix accessibles." />
+  <meta name="keywords"
+        content="services digitaux Moncton, site web, SEO, marketing, agents IA, logiciels sur mesure, Publicus Group" />
+  <meta name="author"  content="Publicus Group" />
+  <meta name="robots"  content="index, follow" />
 
-  <link rel="icon" type="image/png" href="logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Services | Publicus Group — 18 Solutions Digitales" />
+  <meta property="og:description" content="5 catégories, 18 solutions sur mesure pour propulser votre business. Présence digitale, marketing, tech, agents IA — Publicus Group, Moncton, NB." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://publicusgroup.mychariow.shop/services.html" />
+  <meta property="og:image"       content="assets/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ── Styles propres à services.html ── -->
   <style>
-
-    /* Hero de page (plus petit que le hero d'accueil) */
-    .hero-page {
-      padding:    calc(var(--hauteur-nav) + 70px) 0 70px;
+    /* ── Hero page intérieure ── */
+    .hero-interieur-page {
+      padding: calc(var(--hauteur-nav) + 80px) 0 80px;
       text-align: center;
-      position:   relative;
-      overflow:   hidden;
     }
 
-    /* Dégradé radial subtil derrière le titre */
-    .hero-page::before {
-      content:  '';
+    .hero-interieur-page h1 { margin: 16px 0 20px; }
+
+    .hero-interieur-page .sous-titre {
+      font-size:   1.08rem;
+      font-weight: 300;
+      color:       var(--texte-attenue);
+      max-width:   560px;
+      margin:      0 auto 0;
+      line-height: 1.85;
+    }
+
+    /* ── Grille de services étendue ── */
+    .grille-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--espace-md);
+    }
+
+    /* ── Liste de features dans une carte ── */
+    .feature-liste {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-liste li {
+      font-size: 0.85rem;
+      color: var(--texte-attenue);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .feature-liste li::before {
+      content: '→';
       position: absolute;
-      inset:    0;
-      background: radial-gradient(
-        ellipse 65% 55% at 50% 35%,
-        rgba(245, 197, 24, 0.09) 0%,
-        transparent 65%
-      );
-      pointer-events: none;
+      left: 0;
+      color: var(--or);
+      font-size: 0.75rem;
     }
 
-    /* ── Filtre de catégories ── */
-    .filtres {
-      display:     flex;
-      gap:         10px;
-      flex-wrap:   wrap;
-      justify-content: center;
-      margin-bottom: var(--espace-xl);
+    /* ── Carte service large (forfait) ── */
+    .carte-forfait {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-bordure);
+      border-radius: var(--rayon-lg);
+      padding: var(--espace-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--espace-xl);
+      align-items: start;
     }
 
-    .btn-filtre {
-      font-family:    var(--police-sub);
-      font-size:      0.78rem;
-      font-weight:    600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background:     transparent;
-      color:          var(--texte-attenue);
-      border:         1px solid var(--glass-bordure);
-      border-radius:  100px;
-      padding:        8px 20px;
-      cursor:         pointer;
-      transition:     var(--transition-rapide);
-    }
-
-    .btn-filtre:hover,
-    .btn-filtre.actif {
-      background:   var(--or);
+    .carte-forfait.featured {
       border-color: var(--or);
-      color:        var(--sombre);
+      box-shadow: var(--ombre-or);
     }
 
-    /* ── Titre de catégorie (séparateur entre les groupes) ── */
-    .titre-categorie {
-      display:     flex;
+    .forfait-badge {
+      display: inline-block;
+      background: var(--or);
+      color: var(--sombre);
+      font-family: var(--police-sub);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: var(--espace-md);
+    }
+
+    .forfait-prix {
+      font-family: var(--police-titre);
+      font-size: 3.5rem;
+      color: var(--or);
+      line-height: 1;
+      margin: var(--espace-sm) 0 4px;
+    }
+
+    .forfait-prix-label {
+      font-size: 0.82rem;
+      color: var(--texte-leger);
+      font-family: var(--police-sub);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Séparateur de section ── */
+    .separateur-section {
+      display: flex;
       align-items: center;
-      gap:         20px;
-      margin:      var(--espace-xl) 0 var(--espace-lg);
+      gap: var(--espace-md);
+      margin: var(--espace-xl) 0 var(--espace-lg);
     }
 
-    .titre-categorie::after {
-      content:    '';
-      flex:       1;
-      height:     1px;
+    .separateur-section::before,
+    .separateur-section::after {
+      content: '';
+      flex: 1;
+      height: 1px;
       background: var(--glass-bordure);
     }
 
-    .titre-categorie h2 {
-      font-size:      clamp(1.4rem, 3vw, 2rem);
-      white-space:    nowrap;
-      color:          var(--blanc);
+    @media (max-width: 900px) {
+      .grille-services { grid-template-columns: 1fr; }
+      .carte-forfait   { grid-template-columns: 1fr; }
     }
-
-    .titre-categorie .categorie-num {
-      font-family:    var(--police-sub);
-      font-size:      0.75rem;
-      font-weight:    700;
-      letter-spacing: 0.2em;
-      color:          var(--or);
-      background:     var(--or-subtil);
-      border:         1px solid var(--or-bordure);
-      border-radius:  6px;
-      padding:        4px 10px;
-      flex-shrink:    0;
-    }
-
-    /* ── Carte service détaillée ── */
-    .carte-service {
-      /* Hérite de .carte-glass mais avec layout spécifique */
-    }
-
-    .carte-service .service-header {
-      display:     flex;
-      align-items: flex-start;
-      gap:         16px;
-      margin-bottom: 16px;
-    }
-
-    .carte-service .service-tarifs {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top:  1px solid var(--glass-bordure);
-      display:     grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:         12px;
-    }
-
-    .tarif-item {
-      text-align: center;
-    }
-
-    .tarif-valeur {
-      display:     block;
-      font-family: var(--police-sub);
-      font-size:   0.95rem;
-      font-weight: 700;
-      color:       var(--or);
-    }
-
-    .tarif-label {
-      display:        block;
-      font-size:      0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color:          var(--texte-leger);
-      margin-top:     3px;
-    }
-
-    /* ── Stack IA utilisé ── */
-    .ia-stack {
-      margin-top:  16px;
-      display:     flex;
-      align-items: center;
-      gap:         8px;
-      flex-wrap:   wrap;
-    }
-
-    .ia-label {
-      font-family:    var(--police-sub);
-      font-size:      0.7rem;
-      font-weight:    700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color:          var(--or);
-      flex-shrink:    0;
-    }
-
-    .ia-outils {
-      font-size: 0.78rem;
-      color:     var(--texte-leger);
-    }
-
-    /* ── Bannière pack groupé ── */
-    .carte-forfait {
-      background: linear-gradient(135deg, var(--sombre-2) 0%, var(--sombre-3) 100%);
-      border:     1px solid rgba(245, 197, 24, 0.35);
-      position:   relative;
-      overflow:   hidden;
-    }
-
-    .carte-forfait::before {
-      content:    '';
-      position:   absolute;
-      top:        -40px;
-      right:      -40px;
-      width:      200px;
-      height:     200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
-    }
-
-    .badge-promo {
-      position:      absolute;
-      top:           16px;
-      right:         16px;
-      background:    var(--or);
-      color:         var(--sombre);
-      font-family:   var(--police-sub);
-      font-size:     0.72rem;
-      font-weight:   700;
-      letter-spacing: 0.1em;
-      padding:       5px 12px;
-      border-radius: 100px;
-    }
-
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION (identique sur les 4 pages) -->
+  <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-interieur">
-      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Accueil">
-        <img src="logo.png" alt="Logo Publicus Group" width="44" height="44" />
+      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Retour à l'accueil">
+        <img src="assets/logo.png" alt="Publicus Group Logo" width="44" height="44" />
         <span class="nav-logo-texte">PUBLICUS <span>GROUP</span></span>
       </a>
       <ul class="nav-liens" role="list">
@@ -223,631 +161,596 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn-nav">Un appel suffit →</a>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <button class="burger"
+              aria-label="Ouvrir le menu de navigation"
+              aria-expanded="false"
+              aria-controls="menu-mobile">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Menu mobile -->
-  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu mobile">
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu de navigation mobile">
     <a href="index.html">Accueil</a>
     <a href="services.html">Services</a>
     <a href="a-propos.html">À Propos</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn-nav" style="margin-top:8px;">Un appel suffit →</a>
+    <div class="menu-mobile-contact"><p>+1 (581) 688-3346</p></div>
   </div>
 
 
   <!-- HERO PAGE -->
-  <header class="hero-page" role="banner">
-    <div class="container" style="position:relative; z-index:1;">
-      <span class="badge revele" style="margin-bottom:20px; display:inline-flex;">
-        Catalogue 2025–2026
-      </span>
-      <!-- H1 de la page Services -->
-      <h1 class="revele delai-1" style="font-size: clamp(2.8rem,7vw,5.5rem);">
-        18 Services.<br /><em>5 Catégories.</em>
+  <section class="hero-interieur-page" aria-label="Titre de la page Services">
+    <div class="container">
+      <div class="revele">
+        <span class="badge">Catalogue complet</span>
+      </div>
+      <h1 class="revele delai-1">
+        Nos <em>Services</em>
       </h1>
-      <p class="revele delai-2" style="max-width:520px; margin: 16px auto 0; font-size:1.05rem;">
-        Chaque service est conçu pour être livrable seul + IA, avec des marges
-        brutes entre 70% et 96%.
+      <p class="sous-titre revele delai-2">
+        5 catégories. 18 solutions conçues pour couvrir l'intégralité
+        de votre écosystème numérique — du premier site web à l'automatisation complète.
       </p>
     </div>
-  </header>
+  </section>
 
 
-  <main>
+  <!-- ═══════════════════════════════════════
+       CATÉGORIE 01 — PRÉSENCE DIGITALE
+       ═══════════════════════════════════════ -->
+  <section id="presence-digitale" aria-label="Présence Digitale">
     <div class="container">
-
-      <!-- ══════════════════════════════════════════════════════
-           CATÉGORIE 01 — PRÉSENCE DIGITALE
-           ══════════════════════════════════════════════════════ -->
-      <div id="presence-digitale">
-        <div class="titre-categorie revele">
-          <span class="categorie-num">01</span>
-          <h2>Présence Digitale</h2>
-        </div>
-
-        <div class="grille-2">
-
-          <!-- Service : Site vitrine -->
-          <article class="carte-glass carte-service revele delai-1">
-            <div class="service-header">
-              <div class="icone-service">🌐</div>
-              <div>
-                <h3>Site Web Vitrine</h3>
-                <span class="tag" style="margin-top:6px;">Projet unique · Solo réalisable</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              5–8 pages responsive, SEO de base, formulaire de contact, CMS intégré.
-              Livré en 5–10 jours avec assistance IA complète.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Cursor · ChatGPT copywriting · Figma IA</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item">
-                <span class="tarif-valeur">~$80</span>
-                <span class="tarif-label">Coût</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">$1 500–$3 500</span>
-                <span class="tarif-label">Revenu</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">95%</span>
-                <span class="tarif-label">Marge brute</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Service : E-commerce -->
-          <article class="carte-glass carte-service revele delai-2">
-            <div class="service-header">
-              <div class="icone-service">🛒</div>
-              <div>
-                <h3>Site Web E-commerce</h3>
-                <span class="tag" style="margin-top:6px;">Projet unique · Solo réalisable</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Boutique en ligne complète, paiement Stripe, gestion des commandes,
-              jusqu'à 50 produits configurés et prêts à vendre.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Cursor AI · Shopify Magic · GPT descriptions</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item">
-                <span class="tarif-valeur">~$120</span>
-                <span class="tarif-label">Coût</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">$3 500–$8 000</span>
-                <span class="tarif-label">Revenu</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">96%</span>
-                <span class="tarif-label">Marge brute</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Service : Identité visuelle -->
-          <article class="carte-glass carte-service revele delai-3">
-            <div class="service-header">
-              <div class="icone-service">🎨</div>
-              <div>
-                <h3>Identité Visuelle Complète</h3>
-                <span class="tag" style="margin-top:6px;">Projet unique · Solo réalisable</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Logo (3 concepts), charte graphique complète, palette de couleurs,
-              typographie, templates réseaux sociaux prêts à l'emploi.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Midjourney · Adobe Firefly · ChatGPT brief</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item">
-                <span class="tarif-valeur">~$50</span>
-                <span class="tarif-label">Coût</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">$800–$2 500</span>
-                <span class="tarif-label">Revenu</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">93%</span>
-                <span class="tarif-label">Marge brute</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Service : Maintenance -->
-          <article class="carte-glass carte-service revele delai-4">
-            <div class="service-header">
-              <div class="icone-service">🔧</div>
-              <div>
-                <h3>Maintenance & Hébergement</h3>
-                <span class="tag" style="margin-top:6px;">Mensuel récurrent · Solo réalisable</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Mises à jour régulières, sécurité renforcée, sauvegardes automatiques,
-              rapport mensuel détaillé, support prioritaire 24/7.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Uptime Robot · Automatisation rapports</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item">
-                <span class="tarif-valeur">~$20/mois</span>
-                <span class="tarif-label">Coût</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">$100–$300/mois</span>
-                <span class="tarif-label">Revenu</span>
-              </div>
-              <div class="tarif-item">
-                <span class="tarif-valeur">80%</span>
-                <span class="tarif-label">Marge brute</span>
-              </div>
-            </div>
-          </article>
-
-        </div><!-- /grille-2 -->
-      </div>
-
-
-      <!-- ══════════════════════════════════════════════════════
-           CATÉGORIE 02 — MARKETING & CROISSANCE
-           ══════════════════════════════════════════════════════ -->
-      <div id="marketing">
-        <div class="titre-categorie revele">
-          <span class="categorie-num">02</span>
-          <h2>Marketing & Croissance</h2>
-        </div>
-
-        <div class="grille-3">
-
-          <article class="carte-glass carte-service revele delai-1">
-            <div class="service-header">
-              <div class="icone-service">🧠</div>
-              <div>
-                <h3>Stratégie & Neuro-marketing</h3>
-                <span class="tag" style="margin-top:6px;">Projet ou mensuel</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Audit complet, analyse data, création de personas, plan stratégique
-              90 jours basé sur la psychologie du consommateur.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Claude · GPT-4 · Semrush · HeatMap IA</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$1 500–$4 000</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$100</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">93%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-2">
-            <div class="service-header">
-              <div class="icone-service">📱</div>
-              <div>
-                <h3>Gestion Réseaux Sociaux</h3>
-                <span class="tag" style="margin-top:6px;">Mensuel récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              12–20 posts/mois, 2–3 plateformes, visuels pro, captions optimisées,
-              modération active, rapport mensuel détaillé.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">GPT-4 captions · Midjourney · Buffer</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$600–$1 800/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$80/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">86%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-3">
-            <div class="service-header">
-              <div class="icone-service">🎯</div>
-              <div>
-                <h3>Campagnes Pub Payante</h3>
-                <span class="tag" style="margin-top:6px;">Mensuel + budget client</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Création de campagnes Meta & Google, ciblage précis, A/B testing,
-              optimisation hebdomadaire, rapport de performance.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Meta Advantage+ · Google Performance Max</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$500–$1 500/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$60/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">88%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-4">
-            <div class="service-header">
-              <div class="icone-service">🎬</div>
-              <div>
-                <h3>Montage Vidéo & Contenu</h3>
-                <span class="tag" style="margin-top:6px;">À l'unité ou forfait</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Reels (30–90s), vidéos promo, sous-titres automatiques IA,
-              formats multi-plateformes optimisés.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Descript · CapCut IA · ElevenLabs</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$300–$1 200/vidéo</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$40</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">86%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-5">
-            <div class="service-header">
-              <div class="icone-service">🔍</div>
-              <div>
-                <h3>SEO Local & Google Business</h3>
-                <span class="tag" style="margin-top:6px;">Mensuel récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Optimisation fiche GMB, mots-clés locaux ciblés, création de
-              backlinks de qualité, rapports de positionnement mensuels.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Surfer SEO · GPT contenu · Automatisation</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$400–$1 000/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$70/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">82%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-        </div><!-- /grille-3 -->
-      </div>
-
-
-      <!-- ══════════════════════════════════════════════════════
-           CATÉGORIE 03 — TECH & LOGICIELS
-           ══════════════════════════════════════════════════════ -->
-      <div id="tech">
-        <div class="titre-categorie revele">
-          <span class="categorie-num">03</span>
-          <h2>Tech & Logiciels</h2>
-        </div>
-
-        <div class="grille-3">
-
-          <article class="carte-glass carte-service revele delai-1">
-            <div class="service-header">
-              <div class="icone-service">💻</div>
-              <div>
-                <h3>Application Web sur Mesure</h3>
-                <span class="tag" style="margin-top:6px;">Selon complexité</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Dashboard, portail client, système de réservation ou toute
-              application métier spécifique à votre activité.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Cursor · Claude Code · v0.dev prototyping</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$4 000–$15 000</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$200</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">95%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-2">
-            <div class="service-header">
-              <div class="icone-service">📦</div>
-              <div>
-                <h3>Logiciel Gestion Stocks</h3>
-                <span class="tag" style="margin-top:6px;">+ $150/mois maintenance</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Suivi en temps réel, alertes de seuil, rapports automatiques,
-              interface simple, accès multi-utilisateurs.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Cursor AI développement · Claude architecture</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$3 000–$7 000</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$150</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">95%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-3">
-            <div class="service-header">
-              <div class="icone-service">👥</div>
-              <div>
-                <h3>Logiciel RH Basique</h3>
-                <span class="tag" style="margin-top:6px;">+ $200/mois maintenance</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Suivi des présences, congés, tâches, évaluations annuelles
-              et onboarding digital pour vos nouvelles recrues.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Cursor AI · Claude pour logique RH</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$3 500–$8 000</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$150</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">95%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-
-      <!-- ══════════════════════════════════════════════════════
-           CATÉGORIE 04 — AGENTS IA
-           ══════════════════════════════════════════════════════ -->
-      <div id="agents-ia">
-        <div class="titre-categorie revele">
-          <span class="categorie-num">04</span>
-          <h2>Agents IA — Vision Long Terme</h2>
-        </div>
-
-        <div class="grille-2">
-
-          <article class="carte-glass carte-service revele delai-1">
-            <div class="service-header">
-              <div class="icone-service">📞</div>
-              <div>
-                <h3>Agent IA — Réceptionniste</h3>
-                <span class="tag" style="margin-top:6px;">$500 setup + récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Répond aux appels entrants 24h/24 · 7j/7, prend des rendez-vous,
-              répond aux FAQ, transfère si urgent. Voix naturelle réaliste.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Retell AI · ElevenLabs · Make.com</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$300–$800/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$80/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">73%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-2">
-            <div class="service-header">
-              <div class="icone-service">🛍️</div>
-              <div>
-                <h3>Agent IA — Prise de Commandes</h3>
-                <span class="tag" style="margin-top:6px;">$800 setup + récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Commandes par chat ou voix, intégration caisse/CRM, confirmation
-              automatique, suivi client en temps réel.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">GPT-4o · Make.com · Twilio · WhatsApp API</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$400–$1 000/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$120/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">70%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-3">
-            <div class="service-header">
-              <div class="icone-service">💬</div>
-              <div>
-                <h3>Agent IA — Support Client</h3>
-                <span class="tag" style="margin-top:6px;">$600 setup + récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Chatbot entraîné sur la FAQ du client, réponses email automatiques,
-              escalade intelligente vers humain si nécessaire.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Voiceflow · Claude / GPT-4 · Zapier</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$250–$700/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$60/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">76%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service revele delai-4">
-            <div class="service-header">
-              <div class="icone-service">📋</div>
-              <div>
-                <h3>Agent IA — RH & Recrutement</h3>
-                <span class="tag" style="margin-top:6px;">$1 200 setup + récurrent</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.88rem; margin-top:12px;">
-              Tri des CVs, entretiens préliminaires automatisés, onboarding
-              digital, suivi des candidats, génération de contrats.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">IA :</span>
-              <span class="ia-outils">Claude analyse CV · Make.com · Notion</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">$500–$1 500/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">~$150/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">70%</span><span class="tarif-label">Marge</span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-
-      <!-- ══════════════════════════════════════════════════════
-           CATÉGORIE 05 — FORFAITS GROUPÉS
-           ══════════════════════════════════════════════════════ -->
-      <div id="forfaits">
-        <div class="titre-categorie revele">
-          <span class="categorie-num">05</span>
-          <h2>Forfaits Groupés</h2>
-        </div>
-
-        <div class="grille-2">
-
-          <article class="carte-glass carte-service carte-forfait revele delai-1">
-            <span class="badge-promo">⭐ Recommandé Lancement</span>
-            <div class="service-header" style="margin-top:8px;">
-              <div class="icone-service">🚀</div>
-              <div>
-                <h3>Pack Lancement Complet</h3>
-                <span class="tag" style="margin-top:6px;">Tout inclus · Projet unique</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Logo + site vitrine + page Google Business + 1 mois de gestion
-              réseaux sociaux + stratégie 90 jours. La solution complète pour
-              démarrer avec impact.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Cursor · Midjourney · GPT · Buffer · Figma IA</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">~$250</span><span class="tarif-label">Coût total</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">$3 500–$6 500</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">96%</span><span class="tarif-label">Marge brute</span></div>
-            </div>
-          </article>
-
-          <article class="carte-glass carte-service carte-forfait revele delai-2">
-            <span class="badge-promo">📈 Recommandé Croissance</span>
-            <div class="service-header" style="margin-top:8px;">
-              <div class="icone-service">⚡</div>
-              <div>
-                <h3>Pack Croissance 360°</h3>
-                <span class="tag" style="margin-top:6px;">Forfait mensuel</span>
-              </div>
-            </div>
-            <div class="ligne-or"></div>
-            <p style="font-size:0.9rem; margin-top:12px;">
-              Gestion réseaux sociaux + SEO + campagnes Meta & Google + 2 vidéos
-              par mois + rapport stratégique mensuel. La machine de croissance
-              complète.
-            </p>
-            <div class="ia-stack">
-              <span class="ia-label">Stack IA :</span>
-              <span class="ia-outils">Stack automatisation complète + reporting IA</span>
-            </div>
-            <div class="service-tarifs">
-              <div class="tarif-item"><span class="tarif-valeur">~$400/mois</span><span class="tarif-label">Coût</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">$2 500–$5 000/mois</span><span class="tarif-label">Revenu</span></div>
-              <div class="tarif-item"><span class="tarif-valeur">84%</span><span class="tarif-label">Marge brute</span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <!-- CTA vers contact -->
-      <div style="text-align:center; padding: var(--espace-2xl) 0 var(--espace-xl);" class="revele">
-        <h2 style="margin-bottom:16px;">Quel service vous correspond ?</h2>
-        <p style="max-width:480px; margin: 0 auto 32px;">
-          Parlons de votre projet. Un appel de 30 minutes suffit pour
-          identifier la solution idéale.
+      <div class="entete-section revele">
+        <span class="label-section">Catégorie 01</span>
+        <h2>Présence Digitale</h2>
+        <p style="margin-top: 12px; max-width: 600px;">
+          Votre vitrine en ligne est votre premier commercial. Nous la construisons
+          vite, bien, et optimisée pour convertir.
         </p>
-        <a href="contact.html" class="btn btn-primaire">
-          Discuter de mon projet <span class="fleche">→</span>
+      </div>
+
+      <div class="grille-services">
+
+        <article class="carte-glass revele delai-1">
+          <span class="carte-numero" aria-hidden="true">01</span>
+          <div class="icone-service">🖥️</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Site Vitrine</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            De la maquette à la mise en ligne en 5–10 jours. Design sur mesure,
+            optimisé mobile et SEO, hébergement inclus.
+          </p>
+          <ul class="feature-liste">
+            <li>Design personnalisé & responsive</li>
+            <li>Formulaire de contact intégré</li>
+            <li>Optimisation SEO on-page</li>
+            <li>Livraison en 5 à 10 jours</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$1 500 – $3 500</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-2">
+          <span class="carte-numero" aria-hidden="true">02</span>
+          <div class="icone-service">🛒</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>E-Commerce</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Boutique en ligne complète avec catalogue produits, paiements sécurisés
+            et tableau de bord de gestion des commandes.
+          </p>
+          <ul class="feature-liste">
+            <li>Catalogue & gestion des produits</li>
+            <li>Paiement en ligne sécurisé</li>
+            <li>Gestion des commandes & stocks</li>
+            <li>Intégration Stripe / PayPal</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$3 500 – $8 000</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-3">
+          <span class="carte-numero" aria-hidden="true">03</span>
+          <div class="icone-service">🎨</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Identité Visuelle</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Logo, charte graphique, palette de couleurs et guidelines de marque.
+            Une identité cohérente sur tous vos supports.
+          </p>
+          <ul class="feature-liste">
+            <li>Logo & déclinaisons</li>
+            <li>Charte graphique complète</li>
+            <li>Fichiers sources fournis</li>
+            <li>Guide d'utilisation de la marque</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$800 – $2 500</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CATÉGORIE 02 — MARKETING & CROISSANCE
+       ═══════════════════════════════════════ -->
+  <section id="marketing" aria-label="Marketing et Croissance" style="padding-top: 0;">
+    <div class="container">
+      <div class="separateur-section revele">
+        <span class="label-section">Catégorie 02</span>
+      </div>
+      <div class="entete-section revele">
+        <h2>Marketing & Croissance</h2>
+        <p style="margin-top: 12px; max-width: 600px;">
+          Visibilité, acquisition, fidélisation. Des stratégies data-driven
+          pour des résultats mesurables dès les premières semaines.
+        </p>
+      </div>
+
+      <div class="grille-services">
+
+        <article class="carte-glass revele delai-1">
+          <span class="carte-numero" aria-hidden="true">04</span>
+          <div class="icone-service">🔍</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>SEO Local</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Positionnez-vous en première page Google pour vos mots-clés locaux.
+            Audit, optimisation on-page & off-page, suivi mensuel.
+          </p>
+          <ul class="feature-liste">
+            <li>Audit SEO complet</li>
+            <li>Optimisation Google My Business</li>
+            <li>Création de contenu SEO</li>
+            <li>Rapport de performance mensuel</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$400 – $1 200/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-2">
+          <span class="carte-numero" aria-hidden="true">05</span>
+          <div class="icone-service">📱</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Gestion Réseaux Sociaux</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Stratégie éditoriale, création de contenu, planification et
+            animation de communauté sur Instagram, Facebook, LinkedIn et TikTok.
+          </p>
+          <ul class="feature-liste">
+            <li>Stratégie de contenu sur mesure</li>
+            <li>12 à 20 posts/mois</li>
+            <li>Stories & Reels</li>
+            <li>Rapport d'engagement mensuel</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$600 – $2 000/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-3">
+          <span class="carte-numero" aria-hidden="true">06</span>
+          <div class="icone-service">💰</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Publicité Payante</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Campagnes Google Ads & Meta Ads ciblées, optimisées pour
+            maximiser votre retour sur investissement.
+          </p>
+          <ul class="feature-liste">
+            <li>Création & gestion des campagnes</li>
+            <li>A/B testing des créatifs</li>
+            <li>Ciblage audience avancé</li>
+            <li>Optimisation continue du ROI</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$500 – $4 000/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-4">
+          <span class="carte-numero" aria-hidden="true">07</span>
+          <div class="icone-service">🎬</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Montage Vidéo</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Courts métrages publicitaires, Reels, témoignages clients et
+            vidéos de présentation — montés et livrés en 48–72h.
+          </p>
+          <ul class="feature-liste">
+            <li>Montage professionnel</li>
+            <li>Sous-titres & animations</li>
+            <li>Formats multi-plateformes</li>
+            <li>Livrables en 48–72h</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$300 – $1 500/vidéo</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-5">
+          <span class="carte-numero" aria-hidden="true">08</span>
+          <div class="icone-service">📧</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Email Marketing</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Séquences d'emails automatisées, newsletters et campagnes de
+            réengagement pour fidéliser votre audience et générer des ventes.
+          </p>
+          <ul class="feature-liste">
+            <li>Séquences d'onboarding</li>
+            <li>Newsletters mensuelles</li>
+            <li>Automation & segmentation</li>
+            <li>Analyse des taux d'ouverture</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$400 – $1 500/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-6">
+          <span class="carte-numero" aria-hidden="true">09</span>
+          <div class="icone-service">📊</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Étude de Marché</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Analyse concurrentielle, identification des segments à haute valeur,
+            et recommandations stratégiques pour positionner votre offre.
+          </p>
+          <ul class="feature-liste">
+            <li>Analyse de la concurrence</li>
+            <li>Identification des personas</li>
+            <li>Rapport détaillé + recommandations</li>
+            <li>Présentation exécutive</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$800 – $2 500</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CATÉGORIE 03 — TECH & LOGICIELS
+       ═══════════════════════════════════════ -->
+  <section id="tech" aria-label="Tech et Logiciels" style="padding-top: 0;">
+    <div class="container">
+      <div class="separateur-section revele">
+        <span class="label-section">Catégorie 03</span>
+      </div>
+      <div class="entete-section revele">
+        <h2>Tech & Logiciels</h2>
+        <p style="margin-top: 12px; max-width: 600px;">
+          Des outils numériques sur mesure pour automatiser vos processus
+          et gagner en efficacité opérationnelle.
+        </p>
+      </div>
+
+      <div class="grille-services">
+
+        <article class="carte-glass revele delai-1">
+          <span class="carte-numero" aria-hidden="true">10</span>
+          <div class="icone-service">📦</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Logiciel de Gestion Stocks</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Application web pour suivre vos entrées/sorties en temps réel,
+            recevoir des alertes de réapprovisionnement et générer des rapports.
+          </p>
+          <ul class="feature-liste">
+            <li>Interface intuitive & responsive</li>
+            <li>Alertes de réapprovisionnement</li>
+            <li>Export PDF / Excel</li>
+            <li>Multi-utilisateurs</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$3 000 – $7 000</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-2">
+          <span class="carte-numero" aria-hidden="true">11</span>
+          <div class="icone-service">👥</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>RH & Planification</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Application de gestion des plannings, congés et profils employés.
+            Simple, rapide à déployer, adapté aux PME.
+          </p>
+          <ul class="feature-liste">
+            <li>Gestion des plannings</li>
+            <li>Suivi des congés & absences</li>
+            <li>Fiches employés</li>
+            <li>Notifications automatiques</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$2 500 – $6 000</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-3">
+          <span class="carte-numero" aria-hidden="true">12</span>
+          <div class="icone-service">⚙️</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>App Web Sur Mesure</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Développement d'applications web entièrement personnalisées
+            selon vos processus métier. De la conception au déploiement.
+          </p>
+          <ul class="feature-liste">
+            <li>Analyse des besoins incluse</li>
+            <li>Design UX/UI soigné</li>
+            <li>Développement agile</li>
+            <li>Formation & documentation</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$5 000 – $15 000</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CATÉGORIE 04 — AGENTS IA
+       ═══════════════════════════════════════ -->
+  <section id="agents-ia" aria-label="Agents IA" style="padding-top: 0;">
+    <div class="container">
+      <div class="separateur-section revele">
+        <span class="label-section">Catégorie 04</span>
+      </div>
+      <div class="entete-section revele">
+        <h2>Agents IA</h2>
+        <p style="margin-top: 12px; max-width: 600px;">
+          Automatisez vos interactions clients et vos opérations internes avec
+          des agents conversationnels intelligents disponibles 24h/24, 7j/7.
+        </p>
+      </div>
+
+      <div class="grille-services">
+
+        <article class="carte-glass revele delai-1">
+          <span class="carte-numero" aria-hidden="true">13</span>
+          <div class="icone-service">🤖</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Réceptionniste Virtuel</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Agent IA qui répond aux questions fréquentes, prend les rendez-vous
+            et qualifie vos leads — sans interruption.
+          </p>
+          <ul class="feature-liste">
+            <li>Disponible 24h/24, 7j/7</li>
+            <li>Intégration site web & WhatsApp</li>
+            <li>Qualification automatique des leads</li>
+            <li>Tableau de bord de suivi</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$400 – $1 000/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-2">
+          <span class="carte-numero" aria-hidden="true">14</span>
+          <div class="icone-service">🛍️</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Agent Prise de Commandes</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Automatisez la prise de commandes par messagerie. L'agent guide
+            le client, gère les options et confirme la commande.
+          </p>
+          <ul class="feature-liste">
+            <li>Processus de commande guidé</li>
+            <li>Intégration WhatsApp / Messenger</li>
+            <li>Confirmation & suivi automatique</li>
+            <li>Sync avec votre système de gestion</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$350 – $900/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-3">
+          <span class="carte-numero" aria-hidden="true">15</span>
+          <div class="icone-service">💬</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Support Client IA</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Résolvez jusqu'à 80% des demandes clients automatiquement.
+            Escalade humaine uniquement pour les cas complexes.
+          </p>
+          <ul class="feature-liste">
+            <li>FAQ dynamique & contextuelle</li>
+            <li>Gestion des réclamations simples</li>
+            <li>Escalade vers humain si nécessaire</li>
+            <li>Rapports hebdomadaires</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$250 – $750/mois</span>
+          </div>
+        </article>
+
+        <article class="carte-glass revele delai-4">
+          <span class="carte-numero" aria-hidden="true">16</span>
+          <div class="icone-service">🎯</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Agent Recrutement</h3>
+          <p style="font-size:0.9rem; margin-top: 8px;">
+            Premier filtre de vos candidatures : l'agent pose les questions clés,
+            évalue les profils et vous livre un shortlist qualifié.
+          </p>
+          <ul class="feature-liste">
+            <li>Présélection automatisée</li>
+            <li>Questionnaire personnalisé</li>
+            <li>Score & classement des candidats</li>
+            <li>Intégration email / formulaire</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 16px;">
+            <span class="tag">$500 – $1 500/mois</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CATÉGORIE 05 — FORFAITS GROUPÉS
+       ═══════════════════════════════════════ -->
+  <section id="forfaits" aria-label="Forfaits Groupés" style="padding-top: 0;">
+    <div class="container">
+      <div class="separateur-section revele">
+        <span class="label-section">Catégorie 05</span>
+      </div>
+      <div class="entete-section revele">
+        <h2>Forfaits Groupés</h2>
+        <p style="margin-top: 12px; max-width: 600px;">
+          Nos packs tout-en-un pour démarrer ou scaler rapidement,
+          avec un tarif préférentiel et une prise en charge complète.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: var(--espace-md);">
+
+        <!-- Pack Lancement -->
+        <div class="carte-forfait revele">
+          <div>
+            <span class="forfait-badge">Pack Lancement</span>
+            <h2 style="margin: 12px 0 8px;">Démarrez en force</h2>
+            <p>
+              L'essentiel pour lancer votre business en ligne : site web,
+              identité de marque, présence sur les réseaux et premier
+              mois de marketing géré.
+            </p>
+            <div class="forfait-prix">$2 500</div>
+            <div class="forfait-prix-label">Paiement unique · Livraison 10–15 jours</div>
+            <div style="margin-top: var(--espace-md);">
+              <a href="contact.html" class="btn btn-primaire">
+                Commander ce pack <span class="fleche">→</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <p style="font-family: var(--police-sub); font-size: 0.78rem; letter-spacing: 0.2em; color: var(--or); margin-bottom: var(--espace-md); text-transform: uppercase;">Inclus dans ce pack</p>
+            <ul class="feature-liste">
+              <li>Site vitrine 5 pages (responsive + SEO)</li>
+              <li>Logo + charte graphique de base</li>
+              <li>Configuration Google My Business</li>
+              <li>Création de vos profils réseaux sociaux</li>
+              <li>1 mois de gestion réseaux sociaux (8 posts)</li>
+              <li>Formation de 1h à votre tableau de bord</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pack Croissance -->
+        <div class="carte-forfait featured revele">
+          <div>
+            <span class="forfait-badge">⭐ Pack Croissance 360°</span>
+            <h2 style="margin: 12px 0 8px;">Scalez sans limite</h2>
+            <p>
+              Une solution complète pour les entreprises qui veulent
+              accélérer : présence digitale avancée, marketing mensuel,
+              agent IA et reporting stratégique.
+            </p>
+            <div class="forfait-prix">$6 500</div>
+            <div class="forfait-prix-label">Paiement unique · 3 mois de suivi inclus</div>
+            <div style="margin-top: var(--espace-md);">
+              <a href="contact.html" class="btn btn-primaire">
+                Commander ce pack <span class="fleche">→</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <p style="font-family: var(--police-sub); font-size: 0.78rem; letter-spacing: 0.2em; color: var(--or); margin-bottom: var(--espace-md); text-transform: uppercase;">Inclus dans ce pack</p>
+            <ul class="feature-liste">
+              <li>Site e-commerce ou app web avancée</li>
+              <li>Identité visuelle complète (logo + charte)</li>
+              <li>3 mois de gestion réseaux sociaux (16 posts/mois)</li>
+              <li>Campagne SEO locale (3 mois)</li>
+              <li>Agent IA réceptionniste (3 mois)</li>
+              <li>1 campagne publicitaire Meta/Google</li>
+              <li>Étude de marché & rapport stratégique</li>
+              <li>Appels de suivi bi-mensuels</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA FINAL -->
+  <section style="padding-top: var(--espace-lg);">
+    <div class="container">
+      <div class="banniere-cta-services revele" style="background: var(--or); border-radius: var(--rayon-xl); padding: 52px var(--espace-xl); display:grid; grid-template-columns: 1fr auto; align-items:center; gap: var(--espace-lg); position:relative; overflow:hidden;">
+        <div style="position:absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background:rgba(0,0,0,0.07);"></div>
+        <div>
+          <h2 style="color: var(--sombre);">Pas encore certain du bon service ?</h2>
+          <p style="color: rgba(26, 10, 0, 0.65); margin-top: 8px;">Un appel de 30 minutes suffit pour identifier la solution parfaite pour votre situation.</p>
+        </div>
+        <a href="contact.html" class="btn btn-sombre">
+          Parler à un expert <span class="fleche">→</span>
         </a>
       </div>
+    </div>
+  </section>
 
-    </div><!-- /container -->
-  </main>
 
-
-  <!-- FOOTER (identique sur les 4 pages) -->
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-grille">
         <div>
-          <div class="footer-logo">
-            <img src="logo.png" alt="Logo Publicus Group" width="52" height="52" />
-            <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
-          </div>
-          <p class="footer-desc">Votre partenaire digital complet à Moncton, NB.</p>
+          <a href="index.html">
+            <div class="footer-logo">
+              <img src="assets/logo.png" alt="Logo Publicus Group" width="52" height="52" />
+              <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Votre partenaire digital complet à Moncton, NB. Le marketing
+            doit refléter vos valeurs — nous le faisons avec précision.
+          </p>
           <div class="footer-reseaux">
-            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <a href="https://www.instagram.com/publicus_group" class="btn-reseau" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
             </a>
-            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <a href="https://www.facebook.com/share/1AqqKRNQzz/" class="btn-reseau" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://publicusgroup.mychariow.shop" class="btn-reseau" aria-label="Boutique" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
             </a>
           </div>
         </div>
         <div>
           <p class="footer-col-titre">Navigation</p>
-          <ul class="footer-liens">
+          <ul class="footer-liens" role="list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="a-propos.html">À Propos</a></li>
@@ -856,29 +759,41 @@
         </div>
         <div>
           <p class="footer-col-titre">Services</p>
-          <ul class="footer-liens">
-            <li><a href="#presence-digitale">Présence Digitale</a></li>
-            <li><a href="#marketing">Marketing & Growth</a></li>
-            <li><a href="#tech">Tech & Logiciels</a></li>
-            <li><a href="#agents-ia">Agents IA</a></li>
-            <li><a href="#forfaits">Forfaits</a></li>
+          <ul class="footer-liens" role="list">
+            <li><a href="services.html#presence-digitale">Présence Digitale</a></li>
+            <li><a href="services.html#marketing">Marketing & Growth</a></li>
+            <li><a href="services.html#tech">Tech & Logiciels</a></li>
+            <li><a href="services.html#agents-ia">Agents IA</a></li>
+            <li><a href="services.html#forfaits">Forfaits Groupés</a></li>
           </ul>
         </div>
         <div>
           <p class="footer-col-titre">Contact</p>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
             <p>+1 (581) 688-3346</p>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>Moncton, NB, Canada</p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Moncton, Nouveau-Brunswick, Canada</p>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p>publicusgroup2026@gmail.com</p>
           </div>
         </div>
       </div>
       <div class="footer-bas">
         <p>© 2025–2026 <a href="index.html">Publicus Group</a>. Tous droits réservés.</p>
-        <p>Conçu avec IA · Moncton, NB</p>
+        <p>Moncton, NB · Canada</p>
       </div>
     </div>
   </footer>
