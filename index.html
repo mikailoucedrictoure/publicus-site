@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══════════════════════════════════════════════════
+       SEO — Balises uniques à cette page
+       ══════════════════════════════════════════════════ -->
+  <title>Publicus Group | Solutions Digitales Complètes — Moncton, NB</title>
+  <meta name="description"
+        content="Publicus Group est votre partenaire digital d'élite à Moncton, NB. Sites web, marketing IA, agents IA, logiciels sur mesure. Qualité agence, prix startup. Un seul appel suffit." />
+  <meta name="keywords"
+        content="agence digitale Moncton, marketing IA, site web, SEO, Nouveau-Brunswick, Publicus Group" />
+  <meta name="author"  content="Publicus Group" />
+  <meta name="robots"  content="index, follow" />
+
+  <!-- Open Graph (partage sur réseaux sociaux) -->
+  <meta property="og:title"       content="Publicus Group | Solutions Digitales Complètes" />
+  <meta property="og:description" content="Votre partenaire digital complet à Moncton, NB. Un seul appel suffit." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://publicusgroup.mychariow.shop" />
+  <meta property="og:image"       content="logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Feuille de style commune -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ══════════════════════════════════════════════════
+       STYLES PROPRES À CETTE PAGE (index.html)
+       ══════════════════════════════════════════════════ -->
+  <style>
+
+    /* ── Section Hero ── */
+    .hero {
+      min-height:  100vh;
+      display:     flex;
+      align-items: center;
+      position:    relative;
+      overflow:    hidden;
+      padding:     calc(var(--hauteur-nav) + 48px) 0 80px;
+    }
+
+    /* Anneaux décoratifs en arrière-plan du hero */
+    .hero-anneau {
+      position:      absolute;
+      border-radius: 50%;
+      border:        1px solid rgba(245, 197, 24, 0.07);
+      pointer-events: none;
+    }
+    .hero-anneau-1 { width: 650px; height: 650px; top: -120px; right: -120px; }
+    .hero-anneau-2 { width: 950px; height: 950px; top: -270px; right: -270px;
+                     border-color: rgba(245, 197, 24, 0.035); }
+    .hero-anneau-3 { width: 450px; height: 450px; bottom: -80px; left: -160px;
+                     border-color: rgba(245, 197, 24, 0.05); }
+
+    /* Grille 2 colonnes dans le hero */
+    .hero-interieur {
+      display:     grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap:         var(--espace-xl);
+      position:    relative;
+      z-index:     1;
+    }
+
+    /* ── Partie gauche (texte) ── */
+    .hero-contenu { }
+
+    .hero-contenu .badge { margin-bottom: var(--espace-md); }
+
+    .hero-contenu h1 { margin-bottom: 10px; }
+
+    .hero-contenu .sous-titre {
+      font-size:   1.08rem;
+      font-weight: 300;
+      color:       var(--texte-attenue);
+      max-width:   480px;
+      margin:      20px 0 38px;
+      line-height: 1.85;
+    }
+
+    /* Groupe de boutons CTA */
+    .hero-cta {
+      display:   flex;
+      gap:       var(--espace-sm);
+      flex-wrap: wrap;
+    }
+
+    /* ── Partie droite (visuel animé) ── */
+    .hero-visuel {
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+      position:        relative;
+    }
+
+    /* Anneau rotatif autour du logo */
+    .logo-wrap {
+      position: relative;
+      width:    300px;
+      height:   300px;
+      display:  flex;
+      align-items:     center;
+      justify-content: center;
+    }
+
+    .logo-anneau {
+      position:      absolute;
+      border-radius: 50%;
+      border:        1px solid rgba(245, 197, 24, 0.18);
+      animation:     tournerLent 22s linear infinite;
+    }
+
+    .logo-anneau-1 { width: 100%; height: 100%; }
+    .logo-anneau-2 {
+      width:            80%;
+      height:           80%;
+      animation-direction: reverse;
+      animation-duration:  16s;
+      border-color:     rgba(245, 197, 24, 0.10);
+    }
+
+    @keyframes tournerLent { to { transform: rotate(360deg); } }
+
+    /* Lueur dorée derrière le logo */
+    .logo-lueur {
+      position:      absolute;
+      width:         180px;
+      height:        180px;
+      border-radius: 50%;
+      background:    radial-gradient(circle, rgba(245, 197, 24, 0.28) 0%, transparent 70%);
+      filter:        blur(28px);
+      animation:     lueurPulse 3.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes lueurPulse {
+      from { opacity: 0.55; transform: scale(0.88); }
+      to   { opacity: 1;    transform: scale(1.15); }
+    }
+
+    /* Logo flottant */
+    .logo-image {
+      width:    170px;
+      height:   170px;
+      object-fit: contain;
+      position: relative;
+      z-index:  1;
+      filter:   drop-shadow(0 0 22px rgba(245, 197, 24, 0.42));
+      animation: flotterLogo 5.5s ease-in-out infinite;
+    }
+
+    @keyframes flotterLogo {
+      0%, 100% { transform: translateY(0);    }
+      50%       { transform: translateY(-14px); }
+    }
+
+    /* Cartes flottantes autour du logo */
+    .carte-flottante {
+      position:      absolute;
+      background:    var(--glass-bg);
+      backdrop-filter:          var(--glass-blur);
+      -webkit-backdrop-filter:  var(--glass-blur);
+      border:        1px solid var(--glass-bordure);
+      border-radius: 10px;
+      padding:       12px 16px;
+      display:       flex;
+      align-items:   center;
+      gap:           10px;
+      animation:     flotterCarte 6s ease-in-out infinite;
+    }
+
+    .carte-flottante:nth-child(3) {
+      top:          10px;
+      right:        -52px;
+      animation-delay: -2.5s;
+    }
+
+    .carte-flottante:nth-child(4) {
+      bottom:       30px;
+      left:         -52px;
+      animation-delay: -4.5s;
+      animation-direction: alternate-reverse;
+    }
+
+    @keyframes flotterCarte {
+      0%, 100% { transform: translateY(0)   rotate(-1deg); }
+      50%       { transform: translateY(-9px) rotate(1deg);  }
+    }
+
+    .carte-flottante-icone {
+      width:           36px;
+      height:          36px;
+      border-radius:   8px;
+      background:      var(--or);
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+      font-size:       1rem;
+      flex-shrink:     0;
+    }
+
+    .carte-flottante-texte strong {
+      display:        block;
+      font-family:    var(--police-sub);
+      font-size:      0.8rem;
+      font-weight:    700;
+      color:          var(--blanc);
+      letter-spacing: 0.04em;
+    }
+
+    .carte-flottante-texte span {
+      font-size: 0.7rem;
+      color:     rgba(245, 197, 24, 0.6);
+    }
+
+    /* ── Barre de statistiques ── */
+    .barre-stats {
+      background:      var(--glass-bg);
+      backdrop-filter:          var(--glass-blur);
+      -webkit-backdrop-filter:  var(--glass-blur);
+      border:          1px solid var(--glass-bordure);
+      border-radius:   var(--rayon-lg);
+      padding:         36px var(--espace-lg);
+      display:         grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:             var(--espace-md);
+      margin-top:      -36px;
+      position:        relative;
+      z-index:         2;
+    }
+
+    /* Séparateurs verticaux entre les stats */
+    .barre-stats .bloc-stat + .bloc-stat {
+      border-left: 1px solid var(--glass-bordure);
+    }
+
+    /* ── Section pourquoi nous ── */
+    .pourquoi-grille {
+      display:     grid;
+      grid-template-columns: 1fr 1fr;
+      gap:         var(--espace-xl);
+      align-items: center;
+    }
+
+    .liste-pourquoi {
+      display:        flex;
+      flex-direction: column;
+      gap:            var(--espace-md);
+    }
+
+    .item-pourquoi {
+      display:     flex;
+      gap:         var(--espace-md);
+      align-items: flex-start;
+    }
+
+    .pourquoi-numero {
+      font-family: var(--police-titre);
+      font-size:   2.8rem;
+      color:       var(--or);
+      line-height: 1;
+      min-width:   52px;
+    }
+
+    .item-pourquoi h3 { margin-bottom: 6px; }
+    .item-pourquoi p  { font-size: 0.88rem; }
+
+    /* ── Bannière CTA dorée ── */
+    .banniere-cta {
+      background:    var(--or);
+      border-radius: var(--rayon-xl);
+      padding:       52px var(--espace-xl);
+      display:       grid;
+      grid-template-columns: 1fr auto;
+      align-items:   center;
+      gap:           var(--espace-lg);
+      position:      relative;
+      overflow:      hidden;
+    }
+
+    /* Cercle décoratif sur la bannière */
+    .banniere-cta::before {
+      content:       '';
+      position:      absolute;
+      right:         -80px;
+      top:           -80px;
+      width:         320px;
+      height:        320px;
+      border-radius: 50%;
+      background:    rgba(0, 0, 0, 0.07);
+    }
+
+    .banniere-cta h2 { color: var(--sombre); }
+    .banniere-cta p  { color: rgba(26, 10, 0, 0.65); margin-top: 8px; }
+
+    /* ── Responsive spécifique à index.html ── */
+    @media (max-width: 900px) {
+      .hero-interieur { grid-template-columns: 1fr; }
+      .hero-visuel    { display: none; }   /* Masque le visuel sur mobile */
+      .barre-stats    { grid-template-columns: 1fr 1fr; }
+      .barre-stats .bloc-stat + .bloc-stat { border-left: none; }
+      .pourquoi-grille   { grid-template-columns: 1fr; }
+      .banniere-cta {
+        grid-template-columns: 1fr;
+        text-align:            center;
+        justify-items:         center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION — Identique sur les 4 pages
+       ══════════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-interieur">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Publicus Group — Retour à l'accueil">
+        <img src="logo.png" alt="Logo Publicus Group" width="44" height="44" />
+        <span class="nav-logo-texte">PUBLICUS <span>GROUP</span></span>
+      </a>
+
+      <!-- Liens desktop -->
+      <ul class="nav-liens" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="a-propos.html">À Propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Bouton CTA desktop -->
+      <a href="contact.html" class="btn-nav">Un appel suffit →</a>
+
+      <!-- Burger mobile -->
+      <button class="burger"
+              aria-label="Ouvrir le menu de navigation"
+              aria-expanded="false"
+              aria-controls="menu-mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Menu mobile (overlay) -->
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-label="Menu de navigation mobile">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À Propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-nav" style="margin-top:8px;">Un appel suffit →</a>
+    <div class="menu-mobile-contact">
+      <p>+1 (581) 688-3346</p>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION HERO — Accroche principale
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Présentation principale de Publicus Group">
+
+    <!-- Décorations d'arrière-plan -->
+    <div class="hero-anneau hero-anneau-1" aria-hidden="true"></div>
+    <div class="hero-anneau hero-anneau-2" aria-hidden="true"></div>
+    <div class="hero-anneau hero-anneau-3" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-interieur">
+
+        <!-- Colonne gauche : Texte & CTA -->
+        <div class="hero-contenu">
+
+          <div class="revele">
+            <span class="badge">Moncton, NB · Canada</span>
+          </div>
+
+          <!-- H1 principal — optimisé SEO -->
+          <h1 class="revele delai-1">
+            Votre Digital,<br />
+            <em>Amplifié par l'IA</em>
+          </h1>
+
+          <p class="sous-titre revele delai-2">
+            Publicus Group livre des solutions digitales de qualité agence
+            à des prix accessibles pour les PME. Sites web, marketing,
+            agents IA, logiciels sur mesure —
+            <strong>un seul appel suffit.</strong>
+          </p>
+
+          <div class="hero-cta revele delai-3">
+            <a href="services.html" class="btn btn-primaire">
+              Nos services <span class="fleche">→</span>
+            </a>
+            <a href="contact.html" class="btn btn-contour">
+              Prendre contact
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Colonne droite : Visuel animé (masqué sur mobile) -->
+        <div class="hero-visuel revele-droite delai-2" aria-hidden="true">
+          <div class="logo-wrap">
+
+            <!-- Anneaux qui tournent -->
+            <div class="logo-anneau logo-anneau-1"></div>
+            <div class="logo-anneau logo-anneau-2"></div>
+
+            <!-- Lueur derrière le logo -->
+            <div class="logo-lueur"></div>
+
+            <!-- Logo principal flottant -->
+            <img src="logo.png"
+                 alt=""
+                 class="logo-image"
+                 aria-hidden="true" />
+
+            <!-- Petite carte flottante en haut à droite -->
+            <div class="carte-flottante">
+              <div class="carte-flottante-icone">🚀</div>
+              <div class="carte-flottante-texte">
+                <strong>Livraison rapide</strong>
+                <span>Site en 5–10 jours</span>
+              </div>
+            </div>
+
+            <!-- Petite carte flottante en bas à gauche -->
+            <div class="carte-flottante">
+              <div class="carte-flottante-icone">🤖</div>
+              <div class="carte-flottante-texte">
+                <strong>Solo + IA</strong>
+                <span>Marge 95%</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /hero-interieur -->
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BARRE DE STATISTIQUES — Chiffres clés
+       ══════════════════════════════════════════════════════════ -->
+  <div class="container">
+    <div class="barre-stats revele">
+
+      <!-- Chiffre 1 -->
+      <div class="bloc-stat">
+        <span class="stat-chiffre"
+              data-cible="18"
+              data-suffixe="">0</span>
+        <span class="stat-label">Services au catalogue</span>
+      </div>
+
+      <!-- Chiffre 2 -->
+      <div class="bloc-stat">
+        <span class="stat-chiffre"
+              data-cible="95"
+              data-suffixe="%">0</span>
+        <span class="stat-label">Marge brute moyenne</span>
+      </div>
+
+      <!-- Chiffre 3 -->
+      <div class="bloc-stat">
+        <span class="stat-chiffre"
+              data-cible="28"
+              data-suffixe="k+">0</span>
+        <span class="stat-label">Revenu max / mois ($)</span>
+      </div>
+
+      <!-- Chiffre 4 -->
+      <div class="bloc-stat">
+        <span class="stat-chiffre"
+              data-cible="5"
+              data-suffixe="">0</span>
+        <span class="stat-label">Marchés cibles</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       APERÇU DES SERVICES — 5 catégories en grille
+       ══════════════════════════════════════════════════════════ -->
+  <section aria-label="Aperçu de nos services">
+    <div class="container">
+
+      <!-- En-tête de section -->
+      <div class="entete-section centre revele">
+        <span class="label-section">Nos expertises</span>
+        <h2>5 Catégories. 18 Solutions.</h2>
+        <p style="max-width:520px; margin: 14px auto 0;">
+          De la présence digitale aux agents IA, nous couvrons l'ensemble
+          de votre écosystème numérique avec précision.
+        </p>
+      </div>
+
+      <!-- Grille de 3 + 3 cartes -->
+      <div class="grille-3">
+
+        <!-- Carte service 1 -->
+        <article class="carte-glass revele delai-1">
+          <span class="carte-numero" aria-hidden="true">01</span>
+          <div class="icone-service">🌐</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Présence Digitale</h3>
+          <p style="margin: 8px 0 16px; font-size:0.9rem;">
+            Sites vitrine, e-commerce, identité visuelle complète.
+            Livraison en 5–10 jours avec IA.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">$1 500 – $8 000</span>
+            <span class="tag">Marge 95%</span>
+          </div>
+        </article>
+
+        <!-- Carte service 2 -->
+        <article class="carte-glass revele delai-2">
+          <span class="carte-numero" aria-hidden="true">02</span>
+          <div class="icone-service">📈</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Marketing & Croissance</h3>
+          <p style="margin: 8px 0 16px; font-size:0.9rem;">
+            Stratégie, réseaux sociaux, SEO local, publicité payante,
+            montage vidéo IA.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">$400 – $4 000/mois</span>
+            <span class="tag">Marge 86%</span>
+          </div>
+        </article>
+
+        <!-- Carte service 3 -->
+        <article class="carte-glass revele delai-3">
+          <span class="carte-numero" aria-hidden="true">03</span>
+          <div class="icone-service">⚙️</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Tech & Logiciels</h3>
+          <p style="margin: 8px 0 16px; font-size:0.9rem;">
+            Apps web sur mesure, logiciels de gestion stocks, RH basique.
+            Développés avec IA.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">$3 000 – $15 000</span>
+            <span class="tag">Marge 95%</span>
+          </div>
+        </article>
+
+        <!-- Carte service 4 -->
+        <article class="carte-glass revele delai-4">
+          <span class="carte-numero" aria-hidden="true">04</span>
+          <div class="icone-service">🤖</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Agents IA</h3>
+          <p style="margin: 8px 0 16px; font-size:0.9rem;">
+            Réceptionniste 24/7, prise de commandes, support client,
+            recrutement — entièrement automatisés.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">$250 – $1 500/mois</span>
+            <span class="tag">Marge 73%</span>
+          </div>
+        </article>
+
+        <!-- Carte service 5 -->
+        <article class="carte-glass revele delai-5">
+          <span class="carte-numero" aria-hidden="true">05</span>
+          <div class="icone-service">🎯</div>
+          <div class="ligne-or" style="margin: 16px 0 12px;"></div>
+          <h3>Forfaits Groupés</h3>
+          <p style="margin: 8px 0 16px; font-size:0.9rem;">
+            Pack Lancement complet & Pack Croissance 360°.
+            La solution tout-en-un pour démarrer vite.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="tag">$2 500 – $6 500</span>
+            <span class="tag">Marge 96%</span>
+          </div>
+        </article>
+
+        <!-- Carte CTA vers services.html -->
+        <article class="carte-glass revele delai-6"
+                 style="display:flex; flex-direction:column; justify-content:center;">
+          <h3 style="margin-bottom:10px;">Catalogue complet</h3>
+          <div class="ligne-or"></div>
+          <p style="font-size:0.88rem; margin: 12px 0 24px;">
+            Explorez les 18 services avec leurs tarifs et détails techniques.
+          </p>
+          <a href="services.html" class="btn btn-primaire" style="font-size:0.82rem; padding:12px 22px; width:fit-content;">
+            Voir tous les services <span class="fleche">→</span>
+          </a>
+        </article>
+
+      </div><!-- /grille-3 -->
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       POURQUOI NOUS — Arguments différenciants
+       ══════════════════════════════════════════════════════════ -->
+  <section aria-label="Pourquoi choisir Publicus Group">
+    <div class="container">
+      <div class="pourquoi-grille">
+
+        <!-- Colonne gauche : Titre et CTA -->
+        <div class="revele-gauche">
+          <span class="label-section">Notre différence</span>
+          <h2>Pourquoi Publicus Group ?</h2>
+          <p style="margin: 16px 0 36px;">
+            Nous ne sommes pas une agence ordinaire. Nous sommes une
+            machine de création de valeur propulsée par l'IA, avec la
+            rigueur d'un consultant senior.
+          </p>
+          <a href="a-propos.html" class="btn btn-contour">
+            Notre histoire <span class="fleche">→</span>
+          </a>
+        </div>
+
+        <!-- Colonne droite : Liste des arguments -->
+        <ul class="liste-pourquoi revele-droite" role="list">
+
+          <li class="item-pourquoi">
+            <span class="pourquoi-numero" aria-hidden="true">01</span>
+            <div>
+              <h3>Solo + IA = Équipe complète</h3>
+              <p>
+                Un seul opérateur amplifié par Claude, GPT-4o, Midjourney,
+                Cursor. La puissance de 5 experts au prix d'un freelance.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-pourquoi">
+            <span class="pourquoi-numero" aria-hidden="true">02</span>
+            <div>
+              <h3>Qualité premium, prix PME</h3>
+              <p>
+                Nos processus IA réduisent les coûts de 90%. Vous bénéficiez
+                d'analyses stratégiques de niveau McKinsey à des tarifs abordables.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-pourquoi">
+            <span class="pourquoi-numero" aria-hidden="true">03</span>
+            <div>
+              <h3>Résultats en jours, pas en mois</h3>
+              <p>
+                Site web en 5–10 jours. Campagne active en 48h. Chaque jour
+                sans présence digitale est une opportunité perdue.
+              </p>
+            </div>
+          </li>
+
+          <li class="item-pourquoi">
+            <span class="pourquoi-numero" aria-hidden="true">04</span>
+            <div>
+              <h3>Vision globale, exécution locale</h3>
+              <p>
+                Basés à Moncton, pensés pour l'Afrique et le monde. Nous
+                comprenons la diaspora africaine et les marchés émergents.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div><!-- /pourquoi-grille -->
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BANNIÈRE CTA — Appel à l'action final
+       ══════════════════════════════════════════════════════════ -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="banniere-cta revele">
+        <div>
+          <h2>Prêt à transformer votre présence digitale ?</h2>
+          <p>Un appel de 30 minutes suffit pour identifier la meilleure stratégie.</p>
+        </div>
+        <a href="contact.html" class="btn btn-sombre">
+          Prendre contact <span class="fleche">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER — Identique sur les 4 pages
+       ══════════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grille">
+
+        <!-- Colonne 1 : Marque -->
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="Logo Publicus Group" width="52" height="52" />
+            <span class="footer-logo-texte">PUBLICUS <span>GROUP</span></span>
+          </div>
+          <p class="footer-desc">
+            Votre partenaire digital complet à Moncton, NB. Le marketing
+            doit refléter vos valeurs — nous le faisons avec l'IA.
+          </p>
+
+          <!-- Réseaux sociaux -->
+          <div class="footer-reseaux">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/publicus_group"
+               class="btn-reseau"
+               aria-label="Publicus Group sur Instagram"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1AqqKRNQzz/"
+               class="btn-reseau"
+               aria-label="Publicus Group sur Facebook"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+
+            <!-- Boutique Chariow -->
+            <a href="https://publicusgroup.mychariow.shop"
+               class="btn-reseau"
+               aria-label="Boutique en ligne Publicus Group"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Colonne 2 : Navigation -->
+        <div>
+          <p class="footer-col-titre">Navigation</p>
+          <ul class="footer-liens" role="list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="a-propos.html">À Propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Services -->
+        <div>
+          <p class="footer-col-titre">Services</p>
+          <ul class="footer-liens" role="list">
+            <li><a href="services.html#presence-digitale">Présence Digitale</a></li>
+            <li><a href="services.html#marketing">Marketing & Growth</a></li>
+            <li><a href="services.html#tech">Tech & Logiciels</a></li>
+            <li><a href="services.html#agents-ia">Agents IA</a></li>
+            <li><a href="services.html#forfaits">Forfaits Groupés</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 4 : Contact -->
+        <div>
+          <p class="footer-col-titre">Contact</p>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <p>+1 (581) 688-3346</p>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Moncton, Nouveau-Brunswick, Canada</p>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p>publicusgroup2026@gmail.com</p>
+          </div>
+
+        </div>
+      </div><!-- /footer-grille -->
+
+      <!-- Bas du footer -->
+      <div class="footer-bas">
+        <p>© 2025–2026 <a href="index.html">Publicus Group</a>. Tous droits réservés.</p>
+        <p>Conçu avec IA · Moncton, NB · Canada</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script JavaScript commun (chargé en dernier pour de meilleures performances) -->
+  <script src="script.js"></script>
+
+</body>
+</html>
